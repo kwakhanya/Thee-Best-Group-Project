@@ -6,7 +6,7 @@ body {
 }
 
 .menu-bar {
-    background-color: #333;
+    background-color: hsl(0, 0%, 20%);
     padding: 10px 0;
 }
 

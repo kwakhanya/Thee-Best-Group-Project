@@ -45,6 +45,7 @@ p{
     padding: 30px;
     text-align: center;
     border-top: 2px solid black;
+   
 }
 
 .heading {
@@ -66,7 +67,9 @@ p{
 .image-gallery {
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin: 50px;
+    background-color: black;
+
 }
 
 .image-gallery img {

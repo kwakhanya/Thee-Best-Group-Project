@@ -33,21 +33,13 @@ body {
     color: #eaeaea;
 }
 
-.contact-form {
-    border-top:1px solid black;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    text-align: center;
-}
-
 .contact-heading {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
-
+/* stylng forms */
 form {
-    display: flex;
+    display: flgit inex;
     flex-direction: column;
 }
 

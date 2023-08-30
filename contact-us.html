@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="contact-us.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="services.css">
+    <script src="contact-us.js"></script>
     <script src="https://kit.fontawesome.com/7bf459ae21.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -29,7 +30,7 @@
     <!-- Contact Form -->
     <!-- <div class="contact-form"> -->
         <h2 class="contact-heading">Contact Us</h2>
-        <form action="#" method="POST">
+        <form id="form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -39,9 +40,9 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
             
-            <button type="submit">Submit</button>
+            <button type="submit" id="submit">Submit</button>
         </form>
-    <!-- </div> -->
+
 </body>
 <footer class="footer">
     <p> &#169; Best Group Established 2023</p>

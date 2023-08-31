@@ -1,3 +1,6 @@
+import alertify from 'alertify.min.js';
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Declare form values for the contact us form
     const form = document.getElementById('form');
@@ -23,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Something went wrong with retrieving users!');
             console.log(error);
+            alertify.alert("User saved");
         });
     });
 });

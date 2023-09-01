@@ -6,7 +6,7 @@ body {
 }
 
 .menu-bar {
-    background-color: hsl(0, 0%, 20%);
+    background-color: #333;
     padding: 10px 0;
 }
 
@@ -34,7 +34,6 @@ body {
 }
 
 .contact-form {
-    border-top:1px solid black;
     max-width: 600px;
     margin: 0 auto;
     padding: 30px;

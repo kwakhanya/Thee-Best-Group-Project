@@ -6,7 +6,7 @@ body {
 }
 
 .menu-bar {
-    background-color: hsl(0, 0%, 20%);
+    background-color: #333;
     padding: 10px 0;
 }
 
@@ -33,13 +33,20 @@ body {
     color: #eaeaea;
 }
 
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+}
+
 .contact-heading {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
-/* stylng forms */
+
 form {
-    display: flgit inex;
+    display: flex;
     flex-direction: column;
 }
 

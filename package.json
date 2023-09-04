@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": " json-server --watch ./MOCK_DATA.json"
+    "start": "json-server --watch ./MOCK_DATA.json"
   },
   "keywords": [],
   "author": "",

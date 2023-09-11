@@ -1,73 +1,69 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // Declare form values for the contact us form
     const form = document.getElementById('form');
-    // const name = document.getElementById('name').innerHTML= 'name';
-    // const email = document.getElementById('email').innerHTML = 'email';
-    // const message = document.getElementById('message').innerHTML = 'message';
+    const username  = document.getElementById('username');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
 
-    // Add an EventListener to get user inputs 
-    form.addEventListener('submit', event => {
-        event.preventDefault();
+    // Add an EventListener to get user inputs
+   form.addEventListener('submit', event => {
+    if (!validateForm()) {
+        event.preventDefault(); // Prevent form submission if validation fails
+    }
+});
 
-        //validateInputs();
+// Custom validation function for the form
+function validateForm() {
+    const nameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const messageValue = message.value.trim();
 
+    let isValid = true;
 
-    // Set Error message for invalid inputs
-    // const setError = (element, message) => {
-    //     let inputControl = element.parentElement;
-    //     const errorDisplay = inputControl.querySelector('.error');
+    // Name validation
+    if (nameValue === '') {
+        showError(username, 'Name is required');
+        isValid = false;
+    } else {
+        hideError(username);
+    }
 
-    //     errorDisplay.innerText = message;
-    //     inputControl.classList.add('error');
-    //     inputControl.classList.remove('success');
-    // };
+    // Email validation
+    const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+    if (emailValue === '') {
+        showError(email, 'Email is required');
+        isValid = false;
+    } else if (!emailValue.match(emailRegex)) {
+        showError(email, 'Provide a valid email address');
+        isValid = false;
+    } else {
+        hideError(email);
+    }
 
-    // Set Succcess message for valid inputs
-    // const setSuccess = element => {
-    //     const inputControl = element.parentElement;
-    //     const errorDisplay = inputControl.querySelector('.error');
+    // Message validation
+    if (messageValue === '') {
+        showError(message, 'Message is required');
+        isValid = false;
+    } else {
+        hideError(message);
+    }
 
-    //     errorDisplay.innerText = '';
-    //     inputControl.classList.add('success');
-    //     inputControl.classList.remove('remove');
-    // }
+    return isValid;
+}
 
+// Display error messages
+function showError(element, message) {
+    const errorElement = element.nextElementSibling; // Assuming the error element follows the input element
+    errorElement.innerText = message;
+    errorElement.style.display = 'block'; // Show the error message
+}
 
-    //  Validate User Email 
-    // const validateEmail = email => {
-    //     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //     return re.test(String(email).toLowerCase());
-    // }
-
-    // Validate Form Inputs
-    // const validateInputs = () => {
-
-    //     const nameValue = name.valueOf.trim;
-    //     const emailValue = email.valueOf.trim();
-    //     const messageValue = message.valueOf.trim();
-
-    //     if (nameValue === '') {
-    //         setError(name, 'Name is required')
-
-    //     } else {
-    //         setSuccess(name);
-    //     }
-
-    //     if (emailValue === '') {
-    //         setError(email, 'Email is required')
-    //     } else if (!validateEmail(emailValue)) {
-    //         setError(email, 'Provide a valid email address');
-    //     } else {
-    //         setSuccess(email);
-    //     }
-
-    //     if (messageValue === '') {
-    //         setError(message, 'Message is required')
-
-    //     } else {
-    //         setSuccess(message);
-    //     }
+// Hide error messages
+function hideError(element) {
+    const errorElement = element.nextElementSibling; // Assuming the error element follows the input element
+    errorElement.innerText = '';
+    errorElement.style.display = 'none'; // Hide the error message
+}
 
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
@@ -79,18 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(data)
         })
-            .then(response => console.log(response.json()))
+            .then(response => response.json())
             .then(obj => {
                 console.log(obj);
             })
             .catch(error => {
                 console.error('Something went wrong with retrieving users!');
                 console.log(error);
-                alertify.success("User saved");
-            });
+            });    
         });
-    });
-
-
-
-// });

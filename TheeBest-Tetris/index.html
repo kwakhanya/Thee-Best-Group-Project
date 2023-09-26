@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+    <div class="field">
+        <canvas id="tetris" width="200" height="400"></canvas>
+        <div class="btn">
+            <button  id="start">Start</button>
+            <button id="reset">Reset</button>
+        </div>   
+      </div>
+      <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <p>Game Over</p>
+        </div>
+    </div>    
+
+    <div class="info">
+        Score : <div id="score">0</div> <br>
+        Level : <div id="level">1</div>
+        
+    </div>
+</div>
+    <script src="tetrominoes.js"></script>
+    <script src="tetris.js" >
+    </script>
+</body>
+</html>

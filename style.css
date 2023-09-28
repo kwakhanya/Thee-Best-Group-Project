@@ -1,13 +1,24 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-  font-family: "Ubuntu", Arial, sans-serif;
+/* Reset CSS and Global Styles */
+html {
   font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Ubuntu", Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 /* =============================
 
 ----------  Header Start ---------
@@ -18,163 +29,102 @@ img {
 }
 
 header {
+  background: #0b2239;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: #0b2239;
   z-index: 1000;
-  height: 87px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 50px;
-  transition: background-color 0.3s ease;
 }
 
 header .header-left {
   display: flex;
   align-items: center;
   margin-left: 200px;
-}
-
-header .header-left .logo {
-  width: 86px;
-  margin-left: -88px;
-}
-
-header .header-left nav {
-  margin-left: 400px;
-}
-
-header .header-left nav ul {
-  display: flex;
-}
-
-header nav ul li a {
-  display: block;
-  color: #cfd9e0;
-  font-size: 18px;
-  padding: 5px 10px;
-  transition: 0.2s;
-}
-
-header nav ul li a:hover,
-header nav ul li a.active {
-  color: #f1f1f1;
-}
-
-nav ul li a.highlighted {
-  color: #fff;
-  font-weight: bold;
-}
-
-
-nav .login-signup {
-  display: none;
+  flex: 1;
 }
 
 header .header-right {
+  flex: 1;
+}
+
+header .logo img {
+  width: 86px;
+}
+
+nav ul {
   display: flex;
-  align-items: center;
+  list-style: none;
 }
 
-header .login-signup {
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
   color: #cfd9e0;
-  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
 }
 
-header .login-signup a {
-  display: inline-block;
-  color: #0b2239;
-  background: #4ad295;
-  padding: 5px 12px;
-  border-radius: 5px;
+nav ul li a:hover {
+  color: #f1f1f1;
 }
 
-header .header-right .hamburger {
-  margin-left: 20px;
-  cursor: pointer;
-  flex-direction: column;
+/* Hamburger Menu Styles */
+.hamburger {
   display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-header .header-right .hamburger div {
+.hamburger div {
   width: 30px;
   height: 2px;
-  margin: 6px 0;
+  margin: 4px 0;
   background: #ffffff;
 }
 
+/* Mobile Navigation Styles */
 @media only screen and (max-width: 768px) {
-  header {
-    padding: 0 20px;
-  }
-
-  header .header-right .hamburger {
-    display: block;
-  }
-
   header .header-left nav {
-    margin: 0;
+    display: none;
     position: absolute;
-    bottom: 100%;
+    top: 80px;
     left: 0;
     width: 100%;
-    height: fit-content;
     background-color: #0b2239;
-    padding: 20px;
-    transition: 0.3s;
     text-align: center;
     z-index: -1;
-    font-size: 3rem;
   }
 
   header .header-left nav.active {
-    top: 0px;
-  }
-
-  header .header-left nav ul {
     display: block;
   }
-}
 
-@media only screen and (max-width: 500px) {
-  nav .login-signup {
-    display: block;
-    margin-top: 20px;
+  header .header-right .hamburger {
+    display: flex;
   }
 
-  header .header-right .login-signup {
-    display: none;
-  }
-}
-
-/* Common styles for all screen sizes */
-/* You can place global styles here */
-
-/* Styles for screens with a maximum width of 767px (small screens) */
-@media (max-width: 767px) {
-  /* Add styles for small screens here */
-  /* You can adjust font sizes, margins, padding, and layout as needed */
-  .service-content {
-      padding: 5px; /* Example adjustment for small screens */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Any other styles for small screens */
-}
-
-/* Styles for screens with a minimum width of 768px (big screens) */
-@media (min-width: 768px) {
-  /* Add styles for big screens here */
-  /* You can adjust font sizes, margins, padding, and layout as needed */
-  .service-content {
-      padding: 10px; /* Example adjustment for big screens */
+  nav ul li {
+    margin-bottom: 10px;
   }
 
-  /* Any other styles for big screens */
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
 }
-
 
 /* Head End */
 
@@ -598,13 +548,12 @@ section.event .events ul li .details a:hover {
   border-color: #31c050;
 }
 
-
+/* Tetris Button Styles */
 .tetris-button {
   color: #31c050;
   display: inline-block;
   padding: 5px 12px;
   border-radius: 5px;
-
 }
 
 /* End Event */

@@ -1,0 +1,610 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Ubuntu", Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* =============================
+
+----------  Header Start ---------
+
+================================*/
+img {
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #0b2239;
+  z-index: 1000;
+  height: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  transition: background-color 0.3s ease;
+}
+
+header .header-left {
+  display: flex;
+  align-items: center;
+  margin-left: 200px;
+}
+
+header .header-left .logo {
+  width: 86px;
+  margin-left: -88px;
+}
+
+header .header-left nav {
+  margin-left: 400px;
+}
+
+header .header-left nav ul {
+  display: flex;
+}
+
+header nav ul li a {
+  display: block;
+  color: #cfd9e0;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: 0.2s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #f1f1f1;
+}
+
+nav ul li a.highlighted {
+  color: #fff;
+  font-weight: bold;
+}
+
+
+nav .login-signup {
+  display: none;
+}
+
+header .header-right {
+  display: flex;
+  align-items: center;
+}
+
+header .login-signup {
+  color: #cfd9e0;
+  font-weight: bold;
+}
+
+header .login-signup a {
+  display: inline-block;
+  color: #0b2239;
+  background: #4ad295;
+  padding: 5px 12px;
+  border-radius: 5px;
+}
+
+header .header-right .hamburger {
+  margin-left: 20px;
+  cursor: pointer;
+  flex-direction: column;
+  display: none;
+}
+
+header .header-right .hamburger div {
+  width: 30px;
+  height: 2px;
+  margin: 6px 0;
+  background: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+
+  header .header-right .hamburger {
+    display: block;
+  }
+
+  header .header-left nav {
+    margin: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    background-color: #0b2239;
+    padding: 20px;
+    transition: 0.3s;
+    text-align: center;
+    z-index: -1;
+    font-size: 3rem;
+  }
+
+  header .header-left nav.active {
+    top: 0px;
+  }
+
+  header .header-left nav ul {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  nav .login-signup {
+    display: block;
+    margin-top: 20px;
+  }
+
+  header .header-right .login-signup {
+    display: none;
+  }
+}
+
+/* Common styles for all screen sizes */
+/* You can place global styles here */
+
+/* Styles for screens with a maximum width of 767px (small screens) */
+@media (max-width: 767px) {
+  /* Add styles for small screens here */
+  /* You can adjust font sizes, margins, padding, and layout as needed */
+  .service-content {
+      padding: 5px; /* Example adjustment for small screens */
+  }
+
+  /* Any other styles for small screens */
+}
+
+/* Styles for screens with a minimum width of 768px (big screens) */
+@media (min-width: 768px) {
+  /* Add styles for big screens here */
+  /* You can adjust font sizes, margins, padding, and layout as needed */
+  .service-content {
+      padding: 10px; /* Example adjustment for big screens */
+  }
+
+  /* Any other styles for big screens */
+}
+
+
+/* Head End */
+
+/* =============================
+
+----------  Home Start ---------
+
+================================*/
+
+.slider-container {
+  position: relative;
+  max-width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  /* margin-top: 170px; */
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#prevBtn {
+  left: 10px;
+}
+
+#nextBtn {
+  right: 10px;
+}
+
+.page-content {
+  padding-top: 87px;
+  /* Match the height of the fixed header */
+}
+/* Home End */
+
+
+
+/* =============================
+
+----------  Section Start --------
+
+================================*/
+
+section {
+  min-height: 100vh;
+  padding: 5rem 2rem;
+}
+
+/* Section End */
+
+/* =============================
+
+----------  About-Us Start --------
+
+================================*/
+
+.main-content {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  border-top: 2px solid black;
+}
+
+.about-us {
+  font-size: 1em;
+  margin-top: 62px;
+}
+
+.about-us h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.table-users {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.table-users th,
+.table-users td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+.table-users th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table-users tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table-users tr:hover {
+  background-color: #e2e2e2;
+}
+
+.picture img {
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  width: 100px;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* About Us End */
+
+/* =============================
+
+-----  Services Start ----------
+
+================================ */
+
+.services {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.service-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Align content vertically in the center */
+  padding: 10px;
+  margin: auto;
+  background-color: rgb(243, 237, 237);
+}
+
+.btn {
+  display: inline-block;
+  padding: 18px 28px;
+  background: var(--main-color);
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  background: var(--main-color-hover);
+  transform: scale(1.05);
+}
+
+.h1 {
+  font-size: 100px;
+}
+
+.span {
+  text-align: center;
+  font-size: large;
+}
+
+.serve {
+  color: black;
+  font-size: 20px;
+  max-width: 1200px;
+  padding: 10px;
+  text-align: center;
+}
+
+.serve-heading {
+  font-size: 1.5em;
+}
+
+.serve ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+.serve li {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  color: black;
+  transition: transform 0.3s ease;
+}
+
+.serve li:hover {
+  transform: scale(1.05);
+}
+
+.vids {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  border-right: 2px solid blueviolet;
+  padding-right: 20px;
+}
+
+/* Service End */
+
+/* =============================
+
+---------- Contact Start -----
+
+================================*/
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.contact-heading {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #555;
+}
+/* Contact End */
+
+/* =============================
+
+---------- Event Start -----
+
+================================*/
+
+/* Styling the entire events section */
+section.event {
+  background-color: #f5f5f5; /* Adjust background color */
+  padding: 20px;
+}
+
+/* Styling the heading */
+section.event .about-heading {
+  font-size: 2.5em;
+  margin-bottom: 20px; /* Adjust margin for spacing */
+  text-align: center;
+}
+
+/* Styling the left content box */
+section.event .leftBox {
+  width: 100%;
+  padding: 20px; /* Adjusted padding */
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center; /* Center-align content */
+}
+
+/* Styling the heading in the left content box */
+section.event .leftBox h1 {
+  font-size: 36px; /* Adjusted font size */
+  text-transform: uppercase;
+}
+
+/* Styling the paragraph in the left content box */
+section.event .leftBox p {
+  margin: 10px 0;
+  font-size: 18px; /* Adjusted font size */
+}
+
+/* Styling the events container */
+section.event .events {
+  margin-top: 20px; /* Added margin for spacing */
+}
+
+/* Styling the list of events */
+section.event .events ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Styling each event item */
+section.event .events ul li {
+  background: #fff;
+  border-radius: 5px; /* Rounded corners for each event */
+  margin-bottom: 20px; /* Added margin for spacing between events */
+  overflow: hidden; /* Contain floats */
+}
+
+/* Styling the time box */
+section.event .events ul li .time {
+  width: 30%;
+  background: #262626;
+  color: #fff;
+  float: left;
+  text-align: center;
+  padding: 37px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Hover effect for the time box */
+section.event .events ul li:hover .time {
+  background: #31c050;
+}
+
+/* Styling the date within the time box */
+section.event .events ul li .time h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Styling the event title and description */
+section.event .events ul li .details {
+  width: 70%;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling the event title */
+section.event .events ul li .details h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+}
+
+/* Styling the event description */
+section.event .events ul li .details p {
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+/* Styling the event "Enquiries" link */
+section.event .events ul li .details a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 15px;
+  border: 1.5px solid #262626;
+  margin-top: 8px;
+  font-size: 18px;
+  transition: 0.5s;
+  margin-bottom: 10px;
+  color: #262626; /* Adjusted link color */
+}
+
+/* Styling the "Enquiries" link hover effect */
+section.event .events ul li .details a:hover {
+  background: #31c050;
+  color: #fff;
+  border-color: #31c050;
+}
+
+
+.tetris-button {
+  color: #31c050;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 5px;
+
+}
+
+/* End Event */

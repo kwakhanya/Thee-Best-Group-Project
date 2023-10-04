@@ -1,64 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Best Construction and Builders</title>
+    <title>The Best Construction</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Start -->
-    <header>
-        <div class="header-left">
-            <div class="logo">
-                <img src="images/logo-1.png" alt="logo" />
-            </div>
-        
-            <nav >
-                <ul>
-                    <li>
-                        <a href="#home" class="active">Home</a>
-                    </li>
-                    <li>
-                        <a href="#about-us" class="active">About</a>
-                    </li>
-                    <li>
-                        <a href="#services" class="active">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact-us" class="active">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#event" class="active">Events</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    
 
-        <div class="header-right">
-            <div class="login-signup">
-                <a href="">Login</a> or <a href="">Signup</a>
-            </div>
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+    </head>
+
+<body>
+    <!-- Nav Start -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid">
+            <a href="#home" class="navbar-brand mb-0 h2">
+                <img class="d-inline-block align-top" src="images/logo.png" alt="logo" width="30" height="30" />
+                Thee Best Construction
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about-us">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#event">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#contact-us">Contact</a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li> -->
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">
+                        Search
+                    </button>
+                </form>
             </div>
         </div>
-    </header>
-    <!-- Head End -->
+    </nav>
+    <!-- Nav End -->
 
     <!-- Home Start -->
     <section class="home" id="home">
-    <div class="slider-container">
+        <div class="slider-container">
             <div class="slider">
-                <img src="images/construction-1.jpg">
-                <img src="images/construction-2.jpg">
-                <img src="images/construction-3.jpg">
+                <img src="images/construction-1.jpg" />
+                <img src="images/construction-2.jpg" />
+                <img src="images/construction-3.jpg" />
+            </div>
+            <div class="slider-controls">
+                <button id="prevBtn" aria-label="Previous">&#9664;</button>
+                <button id="nextBtn" aria-label="Next">&#9654;</button>
             </div>
         </div>
     </section>
@@ -68,214 +97,317 @@
     <section class="about-us" id="about-us">
         <div class="about-content">
             <h2 class="about-heading">About Us</h2>
-                <table class="table-users">
-                    <!-- Table Header -->
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th class="picture">Profile Picture</th>
-                        <th>Description</th>
-                    </tr>
-                    <!-- Team Members -->
-                    <tr>
-                        <td>Thabiso</td>
-                        <td>Matsaba</td>
-                        <td><a href="mailto:Thabiso.Matsaba@capaciti.org.za">Thabiso.Matsaba@capaciti.org.za</a></td>
-                        <td>
-                            <img src="images/Thabiso.jfif" alt="Thabiso Image" style="width: 70px;">
-                        </td>
-                        <td>I am an aspiring Full-Stack Software Developer</td>
-                    </tr>
-                    <tr>
-                        <td>Asavela</td>
-                        <td>Mgidi</td>
-                        <td><a href="mailto:Asavela.Mgidi@capaciti.org.za">Asavela.Mgidi@capaciti.org.za</a></td>
-                        <td>
-                            <img src="images/Asavela.jpeg" alt="Asavela Image" style="width: 70px;">
-                        </td>
-                        <td>Even the greatest was once a beginner. Don't be afraid to take that first step</td>
-                    </tr>
-                    <tr>
-                        <td>Baxolise</td>
-                        <td>Ndzobongo</td>
-                        <td><a href="mailto:Baxolise.Ndzobongo@capaciti.org.za">Baxolise.Ndzobongo@capaciti.org.za</a></td>
-                        <td>
-                            <img src="images/Baxolise.jpeg" alt="Baxolise Image" style="width: 70px;">
-                        </td>
-                        <td>When you get tired, learn to rest, not quit.</td>
-                    </tr>
-                    <tr>
-                        <td>Vuyolwethu</td>
-                        <td>Mfidi</td>
-                        <td><a href="mailto:Vuyolwethu.Mfidi@capaciti.org.za">Vuyolwethu.Mfidi@capaciti.org.za</a></td>
-                        <td>
-                            <img src="images/Vuyolwethu.jpeg" alt="Vuyo Image" style="width: 70px;">
-                        </td>
-                        <td>Front-end developer</td>
-                    </tr>
-                    <tr>
-                        <td>Zanele</td>
-                        <td>Mangqangwana</td>
-                        <td><a href="mailto:Zanele.Mangqangwana@capaciti.org.za">Zanele.Mangqangwana@capaciti.org.za</a></td>
-                        <td>
-                            <img src="images/Zanele.jpeg" alt="Zanele Image" style="width: 70px;">
-                        </td>
-                        <td>If you can dream it, you can achieve it.</td>
-                    </tr>
-                    <tr>
-                        <td>Nelisiwe</td>
-                        <td>Ngqeme</td>
-                        <td><a href="mailto:Nelisiwe.Ngqeme@capaciti.org.za">Nelisiwe.Ngqeme@capaciti.org.za</a></td>
-                        <td>
-                            <img src="images/Nelisiwe.jpeg" alt="Nelisiwe Image" style="width: 70px;">
-                        </td>
-                        <td>A life spent making mistakes is not only more honorable, but more useful than a life spent doing nothing.</td>
-                    </tr>
-                </table>
-            </div>
+            <table class="table-users">
+                <!-- Table Header -->
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th class="picture">Profile Picture</th>
+                    <th>Description</th>
+                </tr>
+                <!-- Team Members -->
+                <tr>
+                    <td>Thabiso</td>
+                    <td>Matsaba</td>
+                    <td>
+                        <a href="mailto:Thabiso.Matsaba@capaciti.org.za">Thabiso.Matsaba@capaciti.org.za</a>
+                    </td>
+                    <td>
+                        <img src="images/Thabiso.jfif" alt="Thabiso Image" style="width: 70px" />
+                    </td>
+                    <td>I am an aspiring Full-Stack Software Developer</td>
+                </tr>
+                <tr>
+                    <td>Asavela</td>
+                    <td>Mgidi</td>
+                    <td>
+                        <a href="mailto:Asavela.Mgidi@capaciti.org.za">Asavela.Mgidi@capaciti.org.za</a>
+                    </td>
+                    <td>
+                        <img src="images/Asavela.jpeg" alt="Asavela Image" style="width: 70px" />
+                    </td>
+                    <td>
+                        Even the greatest was once a beginner. Don't be afraid to take
+                        that first step
+                    </td>
+                </tr>
+                <tr>
+                    <td>Baxolise</td>
+                    <td>Ndzobongo</td>
+                    <td>
+                        <a href="mailto:Baxolise.Ndzobongo@capaciti.org.za">Baxolise.Ndzobongo@capaciti.org.za</a>
+                    </td>
+                    <td>
+                        <img src="images/Baxolise.jpeg" alt="Baxolise Image" style="width: 70px" />
+                    </td>
+                    <td>When you get tired, learn to rest, not quit.</td>
+                </tr>
+                <tr>
+                    <td>Vuyolwethu</td>
+                    <td>Mfidi</td>
+                    <td>
+                        <a href="mailto:Vuyolwethu.Mfidi@capaciti.org.za">Vuyolwethu.Mfidi@capaciti.org.za</a>
+                    </td>
+                    <td>
+                        <img src="images/Vuyolwethu.jpeg" alt="Vuyo Image" style="width: 70px" />
+                    </td>
+                    <td>Front-end developer</td>
+                </tr>
+                <tr>
+                    <td>Zanele</td>
+                    <td>Mangqangwana</td>
+                    <td>
+                        <a href="mailto:Zanele.Mangqangwana@capaciti.org.za">Zanele.Mangqangwana@capaciti.org.za</a>
+                    </td>
+                    <td>
+                        <img src="images/Zanele.jpeg" alt="Zanele Image" style="width: 70px" />
+                    </td>
+                    <td>If you can dream it, you can achieve it.</td>
+                </tr>
+                <tr>
+                    <td>Nelisiwe</td>
+                    <td>Ngqeme</td>
+                    <td>
+                        <a href="mailto:Nelisiwe.Ngqeme@capaciti.org.za">Nelisiwe.Ngqeme@capaciti.org.za</a>
+                    </td>
+                    <td>
+                        <img src="images/Nelisiwe.jpeg" alt="Nelisiwe Image" style="width: 70px" />
+                    </td>
+                    <td>
+                        A life spent making mistakes is not only more honorable, but more
+                        useful than a life spent doing nothing.
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
     <!-- About Us End -->
 
-   <!-- Services Start -->
-   <section class="services" id="services">
-    <h2 class="contact-heading">Services</h2>
-    <div class="service-content">
-        <!--Responsive videos-->
-        <div class="vids">
-            <video controls>
-                <source src="Videos/Health/Health.3gp" type="video/3gp">
-                <source src="Videos/Health/Health.mp4" type="video/mp4" class="hero-vid">
-                <source src="Videos/Health/Health.avi" type="video/avi">
-            </video>
-            <h4><span>We also promote Health and Safety in our <br>working environment </span><h4> 
-            <video controls>
-                <source src="Videos/Renovations/Renovations.mp4" type="video/mp4">
-                <source src="Videos/Renovations/Renovations.3gp" type="video/3gp">
-                <source src="Videos/Renovations/Renovations.avi" type="video/avi">
-            </video>
-            <h4><span>Renovations at a lower cost you can ask for a <a href="#contact-us">qoute</a>.</span> </h4>     
+    <!-- Services Start -->
+    <section class="services" id="services">
+        <h2 class="contact-heading">Services</h2>
+        <div class="service-content">
+            <!-- Services Section,what we offer -->
+            <div class="serve">
+                <h3 class="serve-heading">We offer the following Services</h3>
+                <ol>
+                    <li>Industrial Engineering</li>
+                    <li>Building renovations</li>
+                    <li>Landscaping</li>
+                    <li>Waterproofing and Roof Tiling </li>
+                    <li>Road Construction</li>
+                    <li>Bore hole</li>
+                    <li>Plumbing</li>
+                </ol>
+            </div>
+            <!--Responsive videos-->
+            <div class="vids">
+                <video controls>
+                    <source src="Videos/Health/Health.3gp" type="video/3gp">
+                    <source src="Videos/Health/Health.mp4" type="video/mp4" class="hero-vid">
+                    <source src="Videos/Health/Health.avi" type="video/avi">
+                </video>
+                <h4><span>We also promote Health and Safety in our <br>working environment </span></h4>
+                <video controls>
+                    <source src="Videos/Renovations/Renovations.mp4" type="video/mp4">
+                    <source src="Videos/Renovations/Renovations.3gp" type="video/3gp">
+                    <source src="Videos/Renovations/Renovations.avi" type="video/avi">
+                </video>
+                <h4><span>Renovations at a lower cost you can ask for a <a href="#contact-us">qoute</a></span></h4>
+            </div>
+    </section>
+    <!-- Service End -->
+
+    <!-- Events Start  -->
+    <section class="event" id="event">
+        <h2 class="about-heading">Events</h2>
+        <div class="leftBox">
+            <div class="content">
+                <h1>
+                    UPCOMING EVENTS
+                </h1>
+                <p>
+                    The Best Constructors are excited to introduce a dynamic initiative aimed at strengthing our
+                    website's interaction with
+                    our cherished audience, dedicated users, and hardworking employees. We are committed to creating a
+                    vibrant online
+                    community and fostering deeper connections among all our stakeholders through a series of engaging
+                    events.
+
+                    These events will serve as a platform for us to connect on a more personal level, exchange ideas,
+                    and collaborate
+                    towards achieving our shared goals. Our intention is to make our website not just a place for
+                    information but a thriving
+                    hub where meaningful interactions and relationships can flourish.
+
+                    Stay tuned for more details on the exciting events we have in store. We can't wait to embark on this
+                    journey of enhanced
+                    engagement with you all!
+                </p>
+                <!-- Tetris Start -->
+                <div id="gameBtn">
+                    <a href="TheeBest-Tetris/tetris.html">Play Tetris</a>
+                </div>
+            </div>
         </div>
-    <!-- create a pop up for  -->
-        <!-- Services Section,what we offer -->
-        <div class="serve">
-            <h3 class="serve-heading">We offer the following Services</h3>  
-            <ol>    
-                <li>Industrial Engineering</li>
-                <li>Building renovations</li>
-                <li>Landscaping</li>
-                <li>Waterproofing and Roof Tiling </li>
-                <li>Road Construction</li>
-                <li>Bore hole</li>
-                <li>Plumbing</li>
-            </ol>
+        <div class="events">
+            <ul>
+                <li>
+                    <div class="time">
+                        <h2>
+                            <span id="event-due-date-workshop"></span>
+                            <br><span></span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            WORKSHOP
+                        </h3>
+                        <p>
+                            We will be hosting a safety workshop, were we will be teaching people who want to learn
+                            about construction and the safety and about working on a site and the toos that are used to
+                            ensure safety.
+                        </p>
+                        <a href="#contact-us">Enquiries</a>
+                    </div>
+                    <div style="clear: both;"></div>
+                </li>
+                <li>
+                    <div class="time">
+                        <h2>
+                            <span id="event-due-date-teambuilding"></span>
+                            <br><span></span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            TEAM BUILDING
+                        </h3>
+                        <p>
+                            As the best constructors we have decided to have a team building events were we will have
+                            various activities, getting our workers an users involved.
+                        </p>
+                        <a href="#contact-us">Enquiries</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                </li>
+                <li>
+                    <div class="time">
+                        <h2>
+                            <span id="event-due-date-fundraising"></span>
+                            <br><span></span>
+                        </h2>
+                    </div>
+                    <div class="details">
+                        <h3>
+                            FUNDRAISING
+                        </h3>
+                        <p> At The Best Constructors, we're taking our commitment to the next level by launching a
+                            special fundraising campaign as
+                            part of our engagement efforts. We believe that together, we can make a positive impact on
+                            our community and beyond.</p>
+                        <a href="#contact-us">Enquiries</a>
+                    </div>
+                    <div style="clear:both;"></div>
+                </li>
+            </ul>
         </div>
     </section>
-   <!-- Service End -->
+    <!-- Evebt End -->
 
-   <!-- Contact Start -->
-   <section class="contact-us" id="contact-us">
-    <h2 class="contact-heading">Contact Us</h2>
-    <form id="form">
-        <label for="username" align="center">Name:</label>
-        <input type="text" id="username" name="username"  >
-
-        <label for="email" align="center">Email:</label>
-        <input type="email" id="email" name="email"  >
-
-        <label for="message" align="center">Message:</label>
-        <textarea id="message" name="message" rows="4"  ></textarea>
-
-        <button type="submit" id="submit">Submit</button>
-    </form>
-</section>
-<!-- Contact End -->
-
-<!-- Events Start  -->
-<section class="event" id="event">
-    <h2 class="about-heading">Events</h2>
-    <div class="leftBox">
-        <div class="content">
-            <h1>
-                UPCOMING EVENTS
-            </h1>
-            <p>
-            The Best Constructors are excited to introduce a dynamic initiative aimed at strengthing our website's interaction with
-            our cherished audience, dedicated users, and hardworking employees. We are committed to creating a vibrant online
-            community and fostering deeper connections among all our stakeholders through a series of engaging events.
-            
-            These events will serve as a platform for us to connect on a more personal level, exchange ideas, and collaborate
-            towards achieving our shared goals. Our intention is to make our website not just a place for information but a thriving
-            hub where meaningful interactions and relationships can flourish.
-            
-            Stay tuned for more details on the exciting events we have in store. We can't wait to embark on this journey of enhanced
-            engagement with you all!
-            </p>
-             <!-- Tetris Start -->
-    <div id="gameBtn">
-        <a href="TheeBest-Tetris/tetris.html">Play Tetris</a>
-    </div>
+    <!-- Contact Start -->
+    <section class="contact-us" id="contact-us">
+        <div class="title">
+            <h2>Get in touch</h2>
         </div>
-    </div>
-    <div class="events">
-       <ul>
-            <li>
-                <div class="time">
-                    <h2>
-                        <span id="event-due-date-workshop"></span>
-                        <br><span></span>
-                    </h2>
-                </div> 
-                <div class="details">
-                    <h3>
-                        WORKSHOP
-                    </h3>
-                    <p>
-                        We will be hosting a safety workshop, were we will be teaching people who want to learn about construction and the safety and about working on a site and the toos that are used to ensure safety.
-                    </p>
-                    <a href="#contact-us">Enquries</a>
+        <div class="box">
+            <!-- Form -->
+            <div class="contact form">
+                <h3>Send a Message</h3>
+                <form action="http://localhost:3000/posts" id="form12">
+                    <div class="formBox">
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Names</span>
+                                <input type="text" id="name" placeholder="Name">
+                            </div>
+                            <div class="inputBox">
+                                <span>Email</span>
+                                <input type="text" id="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Surname</span>
+                                <input type="text" id="surname" placeholder="Surname">
+                            </div>
+                            <div class="inputBox">
+                                <span>Mobile</span>
+                                <input type="text" id="mobile" placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="row100">
+                            <div class="inputBox">
+                                <span>Message</span>
+                                <textarea placeholder="Text here" id="message"></textarea>
+                            </div>
+                            <div class="row100">
+                                <div class="inputBox">
+                                    <input type="submit" value="Send">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Contact details -->
+            <div class="contact info">
+                <h3>Contact details</h3>
+                <div class="infoBox">
+                    <div>
+                        <span><ion-icon name="location-outline"></ion-icon></span>
+                        <p>14 Albert Road,Nyanga East <br>Cape Town</p>
+                    </div>
+                    <div>
+                        <span><ion-icon name="mail-outline"></ion-icon></span>
+                        <a href="mailto:info@theebest.org.za">info@theBest.org.za</a>
+                    </div>
+                    <div>
+                        <span><ion-icon name="call"></ion-icon></span>
+                        <a href="tel:+21 65767789"> +21 98768723</a>
+                    </div>
+                    <!-- Social handles -->
+                    <ul class="socials">
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></ion-icon></li>
+                    </ul>
                 </div>
-                <div style="clear: both;"></div>
-            </li>
-            <li>
-                <div class="time">
-                    <h2>
-                        <span id="event-due-date-teambuilding"></span>
-                        <br><span></span>
-                    </h2>
-                </div>
-                <div class="details">
-                    <h3>
-                        TEAM BUILDING
-                    </h3>
-                    <p>
-                       As the best constructors we have decided to have a team building events were we will have various activities, getting our workers an users involved.
-                    </p>
-                    <a href="#contact-us">Enquries</a>
-                </div>
-                <div style="clear:both;"></div>
-            </li>
-            <li>
-                <div class="time">
-                    <h2>
-                        <span id="event-due-date-fundraising"></span>
-                        <br><span></span>
-                    </h2>
-                </div>
-                <div class="details">
-                    <h3>
-                        FUNDRAISING
-                    </h3>
-                    <p> At The Best Constructors, we're taking our commitment to the next level by launching a special fundraising campaign as
-                        part of our engagement efforts. We believe that together, we can make a positive impact on our community and beyond.</p>
-                    <a href="#contact-us">Enquries</a>
-                </div>
-                <div style="clear:both;"></div>
-            </li>
-        </ul>
-    </div>
-</section>
-<script src="main.js"></script>
+            </div>
+
+            <!--Contact Map -->
+            <div class="contact  map ">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13231.987639750349!2d18.570538710038015!3d-33.992613130006006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc4505ef538661%3A0xaebddaf9755f7da9!2sNyanga%2C%20Cape%20Town%2C%207750!5e0!3m2!1sen!2sza!4v1696228054549!5m2!1sen!2sza"
+                    style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact End -->
+
+    <!-- Scroll Up Button -->
+    <button id="backToTopBtn" title="Back to Top">↑</button>
+    <!-- Scoll End -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

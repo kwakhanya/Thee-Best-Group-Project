@@ -1,172 +1,112 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Navigation and Toggle Menu
 
-  const hamburger = document.querySelector(".hamburger");
-  const nav = document.querySelector("nav");
-  hamburger.onclick = function () {
-  nav.classList.toggle("active");
-  };
-
-  // Home Images
-  const slider = document.querySelector(".slider");
+  const slider = document.querySelector('.slider');
+  const sliderImages = document.querySelectorAll('.slider img');
+  const prevBtn = document.querySelector('#prevBtn');
+  const nextBtn = document.querySelector('#nextBtn');
+  const totalSlides = sliderImages.length;
   let currentIndex = 0;
-  const slides = document.querySelectorAll(".slider img");
-  const totalSlides = slides.length;
 
   function updateSlider() {
-    const translateXValue = -currentIndex * 100 + "%";
-    slider.style.transform = `translateX(${translateXValue})`;
+      const translateXValue = -currentIndex * 100 + "%";
+      slider.style.transform = `translateX(${translateXValue})`;
   }
+
+  nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % sliderImages.length;
+      updateSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+      updateSlider();
+  });
 
   function showSlide(index) {
-    if (index < 0) {
-      currentIndex = totalSlides - 1;
-    } else if (index >= totalSlides) {
-      currentIndex = 0;
-    } else {
-      currentIndex = index;
-    }
-    updateSlider();
+      if (index < 0) {
+          currentIndex = totalSlides - 1;
+      } else if (index >= totalSlides) {
+          currentIndex = 0;
+      } else {
+          currentIndex = index;
+      }
+      updateSlider();
   }
 
-  // Automatically advance the slider every 3 seconds
   setInterval(() => {
-    showSlide(currentIndex + 1);
+      showSlide(currentIndex + 1);
   }, 3000);
 
-  // Form Validation
+  // Function to update the countdown for a specific event
+  function updateCountdown(elementId, eventDate) {
+      const eventElement = document.getElementById(elementId);
+      const now = new Date().getTime();
+      const distance = new Date(eventDate).getTime() - now;
 
-  const form = document.getElementById("form");
-  const username = document.getElementById("username");
-  const email = document.getElementById("email");
-  const message = document.getElementById("message");
+      if (distance > 0) {
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  // Add an EventListener to get user inputs
-  form.addEventListener("submit", (event) => {
-    if (!validateForm()) {
-      event.preventDefault(); // Prevent form submission if validation fails
-    }
-  });
-
-  // Custom validation function for the form
-  function validateForm() {
-    const nameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const messageValue = message.value.trim();
-
-    let isValid = true;
-
-    // Name validation
-    if (nameValue === "") {
-      showError(username, "Name is required");
-      isValid = false;
-    } else {
-      hideError(username);
-    }
-
-    // Email validation
-    const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-    if (emailValue === "") {
-      showError(email, "Email is required");
-      isValid = false;
-    } else if (!emailValue.match(emailRegex)) {
-      showError(email, "Provide a valid email address");
-      isValid = false;
-    } else {
-      hideError(email);
-    }
-
-    // Message validation
-    if (messageValue === "") {
-      showError(message, "Message is required");
-      isValid = false;
-    } else {
-      hideError(message);
-    }
-
-    return isValid;
-  }
-
-  // Display error messages
-  function showError(element, message) {
-    const errorElement = element.nextElementSibling; // Assuming the error element follows the input element
-    errorElement.innerText = message;
-    errorElement.style.display = "block"; // Show the error message
-  }
-
-  // Hide error messages
-  function hideError(element) {
-    const errorElement = element.nextElementSibling; // Assuming the error element follows the input element
-    errorElement.innerText = "";
-    errorElement.style.display = "none"; // Hide the error message
-  }
-
-  // Get all the navigation links
-  const navLinks = document.querySelectorAll("nav ul li a");
-
-  // Add a scroll event listener to the window
-  window.addEventListener("scroll", () => {
-    // Get the current scroll position
-    const scrollPosition = window.scrollY;
-
-    // Loop through each navigation link
-    navLinks.forEach((link) => {
-      const sectionId = link.getAttribute("href").substring(1);
-      const section = document.getElementById(sectionId);
-
-      // Check if the section is in the viewport
-      if (
-        section.offsetTop <= scrollPosition + 100 &&
-        section.offsetTop + section.offsetHeight > scrollPosition + 100
-      ) {
-        // Remove the "highlighted" class from all links
-        navLinks.forEach((navLink) => {
-          navLink.classList.remove("highlighted");
-        });
-
-        // Add the "highlighted" class to the current link
-        link.classList.add("highlighted");
+          const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+          eventElement.innerText = countdownText;
+      } else {
+          eventElement.innerText = "Event ended";
       }
-    });
-  });
-
-  // Define the event dates (replace with your actual event dates)
-  const eventWorkshopDate = new Date("2023-09-22"); // Workshop date (YYYY-MM-DD)
-  const eventTeamBuildingDate = new Date("2023-10-06"); // Team Building date (YYYY-MM-DD)
-  const eventFundraisingDate = new Date("2023-10-12"); // Fundraising date (YYYY-MM-DD)
-
-  // Get the current date
-  const currentDate = new Date();
-
-  // Calculate the time differences in milliseconds
-  const timeDifferenceWorkshop = eventWorkshopDate - currentDate;
-  const timeDifferenceTeamBuilding = eventTeamBuildingDate - currentDate;
-  const timeDifferenceFundraising = eventFundraisingDate - currentDate;
-
-  // Function to format time remaining as a string
-  function formatTimeRemaining(timeDifference) {
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-    return `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
   }
 
-  // Update the due date span elements for each event
-  const dueDateElementWorkshop = document.getElementById("event-due-date-workshop");
-  if (dueDateElementWorkshop) {
-    dueDateElementWorkshop.textContent = formatTimeRemaining(timeDifferenceWorkshop);
-  }
+  // Update the countdown for each event
+  setInterval(() => {
+      updateCountdown("event-due-date-workshop", "2023-10-16 10:00:00");
+      updateCountdown("event-due-date-teambuilding", "2023-10-15 12:00:00");
+      updateCountdown("event-due-date-fundraising", "2023-10-17 20:00:00");
 
-  const dueDateElementTeamBuilding = document.getElementById("event-due-date-teambuilding");
-  if (dueDateElementTeamBuilding) {
-    dueDateElementTeamBuilding.textContent = formatTimeRemaining(timeDifferenceTeamBuilding);
-  }
+      // Add similar lines for other events
+  }, 1000); // Update every second
 
-  const dueDateElementFundraising = document.getElementById("event-due-date-fundraising");
-  if (dueDateElementFundraising) {
-    dueDateElementFundraising.textContent = formatTimeRemaining(timeDifferenceFundraising);
-  }
+ // Get the button element
+ var backToTopBtn = document.getElementById("backToTopBtn");
+
+ // When the user scrolls down 20px from the top of the document, show the button
+ window.onscroll = function () {
+   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+     backToTopBtn.style.display = "block";
+   } else {
+     backToTopBtn.style.display = "none";
+   }
+ };
+
+ // When the button is clicked, scroll to the top of the document
+ backToTopBtn.onclick = function () {
+   document.body.scrollTop = 0;
+   document.documentElement.scrollTop = 0;
+ };
+
+// Send simple form to server
+document.getElementById("form12").addEventListener('submit', event => {
+  event.preventDefault();
+  const formData = new FormData(document.getElementById("form12"));
+  const data = Object.fromEntries(formData);
+
+  fetch('http://localhost:3000/posts', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+      .then(response => response.json())
+      .then(obj => {
+          console.log(obj);
+          alert.success("User saved");
+      })
+      .catch(error => {
+          console.error('Something went wrong with retrieving users!');
+          console.log(error);
+      });
+      console.log('http://localhost:3000/posts');
+});
+
+
 });

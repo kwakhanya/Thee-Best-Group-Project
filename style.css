@@ -1,182 +1,7 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
+html {
   font-family: "Ubuntu", Arial, sans-serif;
   font-size: 16px;
 }
-
-/* =============================
-
-----------  Header Start ---------
-
-================================*/
-img {
-  width: 100%;
-}
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #0b2239;
-  z-index: 1000;
-  height: 87px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 50px;
-  transition: background-color 0.3s ease;
-}
-
-header .header-left {
-  display: flex;
-  align-items: center;
-  margin-left: 200px;
-}
-
-header .header-left .logo {
-  width: 86px;
-  margin-left: -88px;
-}
-
-header .header-left nav {
-  margin-left: 400px;
-}
-
-header .header-left nav ul {
-  display: flex;
-}
-
-header nav ul li a {
-  display: block;
-  color: #cfd9e0;
-  font-size: 18px;
-  padding: 5px 10px;
-  transition: 0.2s;
-}
-
-header nav ul li a:hover,
-header nav ul li a.active {
-  color: #f1f1f1;
-}
-
-nav ul li a.highlighted {
-  color: #fff;
-  font-weight: bold;
-}
-
-
-nav .login-signup {
-  display: none;
-}
-
-header .header-right {
-  display: flex;
-  align-items: center;
-}
-
-header .login-signup {
-  color: #cfd9e0;
-  font-weight: bold;
-}
-
-header .login-signup a {
-  display: inline-block;
-  color: #0b2239;
-  background: #4ad295;
-  padding: 5px 12px;
-  border-radius: 5px;
-}
-
-header .header-right .hamburger {
-  margin-left: 20px;
-  cursor: pointer;
-  flex-direction: column;
-  display: none;
-}
-
-header .header-right .hamburger div {
-  width: 30px;
-  height: 2px;
-  margin: 6px 0;
-  background: #ffffff;
-}
-
-@media only screen and (max-width: 768px) {
-  header {
-    padding: 0 20px;
-  }
-
-  header .header-right .hamburger {
-    display: block;
-  }
-
-  header .header-left nav {
-    margin: 0;
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    height: fit-content;
-    background-color: #0b2239;
-    padding: 20px;
-    transition: 0.3s;
-    text-align: center;
-    z-index: -1;
-    font-size: 3rem;
-  }
-
-  header .header-left nav.active {
-    top: 0px;
-  }
-
-  header .header-left nav ul {
-    display: block;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  nav .login-signup {
-    display: block;
-    margin-top: 20px;
-  }
-
-  header .header-right .login-signup {
-    display: none;
-  }
-}
-
-/* Common styles for all screen sizes */
-/* You can place global styles here */
-
-/* Styles for screens with a maximum width of 767px (small screens) */
-@media (max-width: 767px) {
-  /* Add styles for small screens here */
-  /* You can adjust font sizes, margins, padding, and layout as needed */
-  .service-content {
-      padding: 5px; /* Example adjustment for small screens */
-  }
-
-  /* Any other styles for small screens */
-}
-
-/* Styles for screens with a minimum width of 768px (big screens) */
-@media (min-width: 768px) {
-  /* Add styles for big screens here */
-  /* You can adjust font sizes, margins, padding, and layout as needed */
-  .service-content {
-      padding: 10px; /* Example adjustment for big screens */
-  }
-
-  /* Any other styles for big screens */
-}
-
-
-/* Head End */
 
 /* =============================
 
@@ -193,8 +18,7 @@ header .header-right .hamburger div {
 
 .slider {
   display: flex;
-  transition: transform 0.3s ease-in-out;
-  /* margin-top: 170px; */
+  transition: transform 0.5s ease-in-out;
 }
 
 .slider img {
@@ -202,32 +26,24 @@ header .header-right .hamburger div {
   height: auto;
 }
 
-button {
+.slider-controls {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-controls button {
+  background-color: transparent;
   border: none;
   cursor: pointer;
-}
-
-#prevBtn {
-  left: 10px;
-}
-
-#nextBtn {
-  right: 10px;
-}
-
-.page-content {
-  padding-top: 87px;
-  /* Match the height of the fixed header */
+  font-size: 24px;
+  margin: 5px 0;
 }
 /* Home End */
-
-
 
 /* =============================
 
@@ -248,86 +64,59 @@ section {
 
 ================================*/
 
-.main-content {
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 30px;
-  text-align: center;
-  border-top: 2px solid black;
-}
-
+/* Style the section background */
 .about-us {
-  font-size: 1em;
-  margin-top: 62px;
-}
-
-.about-us h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
+  background-color: #f5f5f5;
+  padding: 40px 0;
   text-align: center;
 }
 
+/* Style the heading */
+.about-heading {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the table */
 .table-users {
   width: 100%;
+  max-width: 957px;
+  margin: 0 auto;
+  background-color: #fff;
   border-collapse: collapse;
-  margin-top: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.table-users th,
-.table-users td {
-  border: 1px solid #dddddd;
-  padding: 8px;
-}
-
+/* Style table header cells */
 .table-users th {
-  background-color: #f2f2f2;
-  font-weight: bold;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
 }
 
+/* Style table data cells */
+.table-users td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style alternating table rows */
 .table-users tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.table-users tr:hover {
-  background-color: #e2e2e2;
-}
-
-.picture img {
-  width: 70px;
+/* Style the profile pictures */
+.table-users .picture img {
+  max-width: 70px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
-.footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
+/* Style the description cell */
+.table-users td:nth-child(5) {
+  text-align: left;
 }
-
-a:link {
-  color: blue;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: green;
-  width: 100px;
-}
-
-a:visited {
-  color: pink;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
 /* About Us End */
 
 /* =============================
@@ -336,83 +125,221 @@ a:active {
 
 ================================ */
 
+/* Style the section background */
 .services {
-  font-family: "Ubuntu", sans-serif;
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  text-align: center;
 }
 
+/* Style the heading */
+.contact-heading {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the service content */
 .service-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Align content vertically in the center */
-  padding: 10px;
-  margin: auto;
-  background-color: rgb(243, 237, 237);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 18px 28px;
-  background: var(--main-color);
-  color: var(--text-color);
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.5s ease;
-}
-
-.btn:hover {
-  background: var(--main-color-hover);
-  transform: scale(1.05);
-}
-
-.h1 {
-  font-size: 100px;
-}
-
-.span {
-  text-align: center;
-  font-size: large;
-}
-
+/* Style the service list */
 .serve {
-  color: black;
-  font-size: 20px;
-  max-width: 1200px;
-  padding: 10px;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .serve-heading {
-  font-size: 1.5em;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .serve ol {
-  list-style-type: none;
-  padding: 0;
+  list-style-type: decimal;
+  padding-left: 20px;
 }
 
 .serve li {
-  margin: 20px 0;
-  display: flex;
-  align-items: center;
-  color: black;
-  transition: transform 0.3s ease;
+  margin-bottom: 10px;
 }
 
-.serve li:hover {
-  transform: scale(1.05);
-}
-
+/* Style the videos */
 .vids {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-top: 20px;
-  border-right: 2px solid blueviolet;
-  padding-right: 20px;
+  text-align: left;
 }
 
+.vids video {
+  max-width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.vids h4 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.vids span {
+  display: block;
+  margin-top: 5px;
+}
+
+.vids a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.vids a:hover {
+  text-decoration: none;
+}
 /* Service End */
+
+/* =============================
+
+---------- Event Start -----
+
+================================*/
+/* Style the section background */
+.event {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Style the heading */
+.about-heading {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the left content box */
+.leftBox {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.leftBox h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.leftBox p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Style the "Play Tetris" button */
+#gameBtn a {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#gameBtn a:hover {
+  background-color: #d8dde2;
+}
+
+#gameBtn a:hover,
+.details a:hover {
+  background-color: #2e3f52; /* Background color on hover */
+  text-decoration: none;
+}
+
+/* Style the events list */
+.events ul {
+  list-style: none;
+  padding: 0;
+}
+
+.events li {
+  margin-bottom: 30px;
+}
+
+/* Style the event time box */
+.time {
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+
+.time h2 {
+  font-size: 24px;
+  color: #333;
+  background-color: #f8f8f8; /* Background color for the timer */
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.time span {
+  display: block;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Hover effect */
+.time h2:hover {
+  background-color: #007bff; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+  text-decoration: none;
+}
+
+/* Style the event details box */
+.details {
+  float: right;
+  width: 70%;
+  text-align: left;
+}
+
+.details h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+/* Clear floats for list items */
+.events li::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Events End */
 
 /* =============================
 
@@ -420,191 +347,249 @@ a:active {
 
 ================================*/
 
-.contact-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px;
-}
-
-.contact-heading {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-bottom: 10px;
-}
-
-input,
-textarea {
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-button {
-  background-color: #333;
-  color: white;
+.contact-us{
+    /* background:linear-gradient(90deg,#0e3959 0.5rem,#0e3959 30%,#6d8996 30%,#03a9f5 100% ); */
+    background: rgb(243, 237, 237); ;
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;
+  
+   
+  
+  }
+  .contact-us .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+   
+  
+  .contact-us .title h2{
+    font-weight: 500;
+    color: #fff;
+  }
+  
+   
+  
+  .form{
+    grid-area: form;
+  }
+  .info{
+    grid-area: info;
+  }
+  .map{
+    grid-area: map;
+  }
+  .contact{
+    padding:40px   ;
+    background: #fff;
+    box-shadow: 0 5px 35px rgba(0, 0, 0,0.15);
+  }
+  .box{
+    position:relative;
+    display: grid;
+    grid-template-columns: 2fr 1f;
+    grid-template-rows:5fr 4fr ;
+    grid-template-areas: 
+    "form info"
+    "form map";
+    grid-gap:20px;
+    margin-top: 20px;
+  
+   
+  
+  }
+  .contact h3{
+    color:#0e3959;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+   
+  
+  /* form */
+  .formBox{
+    position: relative;
+    width: 100%;
+  }
+  .formBox .row50{
+    display: flex;
+    gap: 20px;
+  
+  }
+  .inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+  } 
+  .formBox .row100 .inputBox{
+    width: 100%;
+  }
+  .inputBox span{
+    color:#0e3959;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .inputBox input{
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    border: 1px solid #333;
+  }
+  .inputBox textarea{
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    border: 1px solid #333; 
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+  }
+  
+   
+  
+  .inputBox input[type="submit"]{
+  background:#ff578b;
+  color:#fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  font-size: 1.1rem;
+  max-width: 120px;
+  font-weight: 500;
   cursor: pointer;
-  font-size: 16px;
-  position: relative;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #555;
-}
+  padding: 14px 15px;
+  margin-left: 45rem;  
+  }
+  .inputBox ::placeholder{
+    color:#ff5f57;
+  }
+  /* Info */
+  .info{
+    background: #0e3959;
+  }
+  .info h3{
+    color: #fff;
+  }
+  .info .infoBox div{
+    display: flex;
+    align-items:center;
+    margin-bottom: 10px;
+  }
+  .info .infoBox div span{
+    min-width: 40px;
+    height: 40px;
+    color: #fff;
+    background: #18b7ff;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%; 
+    margin-right: 15px; 
+  }
+  
+   
+  
+  .info .infoBox div p{
+    color: #fff;
+    font-size: 1.1rem;
+  }
+  .info .infoBox div a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+   
+  
+  /*------Social Handles-----*/
+  .socials{
+    margin-top: 40px;
+    display: flex;
+  }
+  .socials li{
+    list-style: none;
+    margin-right: 15px;
+  }
+  .socials li a{
+    color: #fff;
+    font-size: 2rem;
+    color: #ccc;
+  }
+  
+   
+  
+  .sci li a:hover{
+    color:#fff
+  }
+  .map{
+  padding: 0; 
+  }
+  .map iframe{
+  width: 100%;
+  height: 100%;
+  }
+  /* Responsive designs */
+  @media(max-width:991px){
+    body{
+        background: #03a9f5;
+    }
+    .contact-us{
+        padding: 20px;  
+    }
+    .box{
+        grid-template-columns: 1fr;
+        grid-template-rows:5fr 4fr ;
+        grid-template-areas: 
+        "form"
+        "info"
+        "map";  
+    }
+    .map{
+        min-height: 300px;
+     }
+     .formBox .row50{
+        display: flex;
+        gap:0;
+        flex-direction: column;       
+    }
+    .contact{
+        padding:30px;
+    }
+    .inputBox{
+     width: 100%;
+    } 
+    .map{
+        min-height:300px ;
+        padding:0 ;
+    }
+    }
 /* Contact End */
 
 /* =============================
 
----------- Event Start -----
+---------- Scroll Button Start -----
 
 ================================*/
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-/* Styling the entire events section */
-section.event {
-  background-color: #f5f5f5; /* Adjust background color */
-  padding: 20px;
-}
-
-/* Styling the heading */
-section.event .about-heading {
-  font-size: 2.5em;
-  margin-bottom: 20px; /* Adjust margin for spacing */
-  text-align: center;
-}
-
-/* Styling the left content box */
-section.event .leftBox {
-  width: 100%;
-  padding: 20px; /* Adjusted padding */
-  box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  text-align: center; /* Center-align content */
-}
-
-/* Styling the heading in the left content box */
-section.event .leftBox h1 {
-  font-size: 36px; /* Adjusted font size */
-  text-transform: uppercase;
-}
-
-/* Styling the paragraph in the left content box */
-section.event .leftBox p {
-  margin: 10px 0;
-  font-size: 18px; /* Adjusted font size */
-}
-
-/* Styling the events container */
-section.event .events {
-  margin-top: 20px; /* Added margin for spacing */
-}
-
-/* Styling the list of events */
-section.event .events ul {
-  list-style: none;
-  padding: 0;
-}
-
-/* Styling each event item */
-section.event .events ul li {
-  background: #fff;
-  border-radius: 5px; /* Rounded corners for each event */
-  margin-bottom: 20px; /* Added margin for spacing between events */
-  overflow: hidden; /* Contain floats */
-}
-
-/* Styling the time box */
-section.event .events ul li .time {
-  width: 30%;
-  background: #262626;
-  color: #fff;
-  float: left;
-  text-align: center;
-  padding: 37px;
-  box-sizing: border-box;
-  position: relative;
-}
-
-/* Hover effect for the time box */
-section.event .events ul li:hover .time {
-  background: #31c050;
-}
-
-/* Styling the date within the time box */
-section.event .events ul li .time h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 36px;
-  line-height: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* Styling the event title and description */
-section.event .events ul li .details {
-  width: 70%;
-  float: left;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Styling the event title */
-section.event .events ul li .details h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-}
-
-/* Styling the event description */
-section.event .events ul li .details p {
-  margin: 10px 0 0;
-  padding: 0;
-  font-size: 16px;
-}
-
-/* Styling the event "Enquiries" link */
-section.event .events ul li .details a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 15px;
-  border: 1.5px solid #262626;
-  margin-top: 8px;
-  font-size: 18px;
-  transition: 0.5s;
-  margin-bottom: 10px;
-  color: #262626; /* Adjusted link color */
-}
-
-/* Styling the "Enquiries" link hover effect */
-section.event .events ul li .details a:hover {
-  background: #31c050;
-  color: #fff;
-  border-color: #31c050;
-}
-
-
-.tetris-button {
-  color: #31c050;
-  display: inline-block;
-  padding: 5px 12px;
-  border-radius: 5px;
-
-}
-
-/* End Event */
+  #backToTopBtn:hover {
+    background-color: #0056b3;
+  }

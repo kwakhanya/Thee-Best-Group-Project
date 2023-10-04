@@ -1,5 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    // Window Scroll
+
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section'); // Select all sections
+    
+        sections.forEach((section) => {
+            const link = document.querySelector(`a[href="#${section.id}"]`);
+            const linkRect = link.getBoundingClientRect();
+            const sectionRect = section.getBoundingClientRect();
+    
+            // Check if the link is in the viewport
+            if (
+                linkRect.top >= sectionRect.top &&
+                linkRect.bottom <= sectionRect.bottom
+            ) {
+                // Remove active class from all links
+                document.querySelectorAll('a.nav-link').forEach((navLink) => {
+                    navLink.classList.remove('active');
+                });
+    
+                // Add active class to the current link
+                link.classList.add('active');
+            }
+        });
+    });
+    
+    // Image Slides 
     const slider = document.querySelector('.slider');
     const sliderImages = document.querySelectorAll('.slider img');
     const prevBtn = document.querySelector('#prevBtn');
@@ -37,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(currentIndex + 1);
     }, 3000);
 
+    // Events
+
     // Function to update the countdown for a specific event
     function updateCountdown(elementId, eventDate) {
         const eventElement = document.getElementById(elementId);
@@ -64,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Add similar lines for other events
     }, 1000); // Update every second
+
+    // Back To Top Button
 
     // Get the button element
     var backToTopBtn = document.getElementById("backToTopBtn");
@@ -101,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (response.ok) {
             // The form data was successfully posted.
             // You can display a success message to the user here.
-            alert("User saved");
+            alert("User saved Succefully");
             console.log("Users:", formData);
         } else {
             // There was an error posting the form data.
@@ -110,4 +141,48 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(error);
         }
     });
+
+    // Cookies Function
+
+    // Function to show the cookie consent modal
+    function showCookieConsentModal() {
+        const modal = document.querySelector('.cookie-consent-modal');
+        modal.style.display = 'block';
+    }
+
+    // Function to hide the cookie consent modal when "Accept" or "Cancel" is clicked
+    const acceptButton = document.querySelector('.button.accept');
+    const cancelButton = document.querySelector('.button.cancel');
+
+    acceptButton.addEventListener('click', function () {
+        hideCookieConsentModal();
+    });
+
+
+    cancelButton.addEventListener('click', function () {
+        hideCookieConsentModal();
+    });
+
+    function hideCookieConsentModal() {
+        const modal = document.querySelector('.cookie-consent-modal');
+        modal.style.display = 'none';
+    }
+
+    // Function to toggle "Read More" and "Read Less" text when clicked
+    const readMoreLink = document.querySelector('.read-more-link');
+    const expandedContent = document.querySelector('.expanded-content');
+
+    readMoreLink.addEventListener('click', function () {
+        if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
+            expandedContent.style.display = 'block';
+            readMoreLink.textContent = 'Read Less';
+        } else {
+            expandedContent.style.display = 'none';
+            readMoreLink.textContent = 'Read More';
+        }
+    });
+    // Show the cookie consent modal when the page loads (2-second delay)
+    window.onload = function () {
+        setTimeout(showCookieConsentModal, 2000);
+    };
 });

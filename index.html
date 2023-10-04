@@ -13,67 +13,44 @@
 
 <body>
     <!-- Nav Start -->
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
-        <div class="container-fluid">
-            <a href="#home" class="navbar-brand mb-0 h2">
-                <img class="d-inline-block align-top" src="images/logo.png" alt="logo" width="30" height="30" />
-                Thee Best Construction
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about-us">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#event">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#contact-us">Contact</a>
-                    </li>
-
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li> -->
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">
-                        Search
-                    </button>
-                </form>
-            </div>
+<!-- Nav Start -->
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class="container-fluid">
+        <a href="#home" class="navbar-brand mb-0 h2">
+            <img class="d-inline-block align-top" src="images/logo.png" alt="logo" width="30" height="30" />
+            Thee Best Construction
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center nav-underline" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item" style="color: blue;">
+                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-us">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#event">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-us">Contact</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+    </div>
+</nav>
+
     <!-- Nav End -->
 
     <!-- Home Start -->
@@ -246,7 +223,9 @@
                 </p>
                 <!-- Tetris Start -->
                 <div id="gameBtn">
-                    <a href="TheeBest-Tetris/tetris.html">Play Tetris</a>
+                    <button
+                        onclick="window.open('TheeBest-Tetris/tetris.html', 'Tetris Game', 'width=800,height=600')">Play
+                        Game</button>
                 </div>
             </div>
         </div>
@@ -343,7 +322,7 @@
                             </div>
                             <div class="inputBox">
                                 <span>Mobile</span>
-                                <input type="text" id="mobile" name="mobile"  placeholder="Phone">
+                                <input type="text" id="mobile" name="mobile" placeholder="Phone">
                             </div>
                         </div>
                         <div class="row100">
@@ -436,9 +415,35 @@
     </div>
     <!-- Footer End -->
 
+    <!-- Cookie Start -->
+    <section class="cookie-consent-modal">
+        <div class="cookie-content">
+            <img src="images/cookie1.jpeg" alt="" height="90px" width="10px">
+            <h1><b>Cookie Consent</b></h1>
+            <p>Important! Please Verify Your actions
+                We take your online security seriously. To protect you from clickjacking attacks, we request your
+                attention. <span class="read-more-link">Read More</span></p>
+            <div class="expanded-content">
+                <p>By clicking "Accept Cookies" below, you acknowledge that you understand the importance of verifying
+                    your
+                    actions on this
+                    website and that you consent to the use of cookies for a safer browsing experience. You can manage
+                    your
+                    cookie
+                    preferences in our Privacy Settings.</p><br>
+            </div>
+            <div class="btns-cookie">
+                <button class="button accept">Accept</button>
+                <button class="button cancel">Cancel</button>
+            </div>
+        </div>
+    </section>
+    <!-- Cookie End -->
+
     <!-- Scroll Up Button -->
     <button id="backToTopBtn" title="Back to Top">↑</button>
     <!-- Scoll End -->
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -449,8 +454,7 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ion icons/ionicons.js"></script>
     <script src="main.js"></script>
     <script src="
-    https://kit.fontawesome.com/7bf459ae21.js"
-    crossorigin="anonymous"></script>
+    https://kit.fontawesome.com/7bf459ae21.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

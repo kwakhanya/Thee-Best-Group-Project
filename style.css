@@ -3,6 +3,12 @@ html {
   font-size: 16px;
 }
 
+/* Style the active item with an underline */
+.navbar-nav .nav-item.active .nav-link {
+  border-bottom: 2px #1b77c2; /* Change to your desired highlight color */
+}
+
+
 /* =============================
 
 ----------  Home Start ---------
@@ -244,7 +250,7 @@ section {
 }
 
 /* Style the "Play Tetris" button */
-#gameBtn a {
+#button a {
   display: inline-block;
   background-color: #007bff;
   color: #fff;
@@ -254,11 +260,11 @@ section {
   transition: background-color 0.3s ease;
 }
 
-#gameBtn a:hover {
+#button a:hover {
   background-color: #d8dde2;
 }
 
-#gameBtn a:hover,
+#button a:hover,
 .details a:hover {
   background-color: #2e3f52; /* Background color on hover */
   text-decoration: none;
@@ -439,7 +445,7 @@ section {
 }
 
 .inputBox input[type="submit"] {
-  background: #ff578b;
+  background: #0e3959;
   color: #fff;
   border: none;
   font-size: 1.1rem;
@@ -450,7 +456,7 @@ section {
   margin-left: 45rem;
 }
 .inputBox ::placeholder {
-  color: #ff5f57;
+  color: #0e3959;
 }
 /* Info */
 .info {
@@ -507,6 +513,8 @@ section {
 }
 .map {
   padding: 0;
+  max-width: 314px;
+    height: 328px;
 }
 .map iframe {
   width: 100%;
@@ -579,181 +587,140 @@ section {
 
 ================================*/
 
-
+/* Footer Container */
 .footer {
-  text-align: center;
-  padding: 3px;
-  background-color: navy;
-  color: white;
+  background-color: #333; /* Set your desired background color */
+  color: #fff; /* Text color for the footer */
+  padding: 40px 0;
 }
 
-.footer {
-  position: relative;
-  margin-top: 45px;
-  padding-top: 90px;
-  color: #ffffff;
-}
-
-.footer .footer-contact,
-.footer .footer-link,
-.footer .newsletter {
-  position: relative;
-  margin-bottom: 45px;
-}
-
-.footer h2 {
-  position: relative;
+/* Footer Contact Section */
+.footer-contact h2 {
+  font-size: 24px; /* Set your desired font size */
   margin-bottom: 20px;
-  padding-bottom: 10px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #fdbe33;
 }
 
-.footer h2::after {
-  position: absolute;
-  content: "";
-  width: 60px;
-  height: 2px;
-  left: 0;
-  bottom: 0;
-  background: #fdbe33;
-}
-
-.footer .footer-link a {
-  display: block;
+.footer-contact p {
   margin-bottom: 10px;
-  color: #ffffff;
-  transition: 0.3s;
 }
 
-.footer .footer-link a::before {
-  position: relative;
-  content: "\f105";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+.footer-contact i {
   margin-right: 10px;
+  font-size: 18px; /* Set your desired icon size */
 }
 
-.footer .footer-link a:hover {
-  color: #fdbe33;
-  letter-spacing: 1px;
+.footer-social a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 24px; /* Set your desired social media icon size */
+  color: #fff; /* Social media icon color */
 }
 
-.footer .footer-contact p i {
-  width: 25px;
+/* Footer Menu */
+.footer-menu .f-menu a {
+  color: #fff; /* Menu link color */
+  text-decoration: none;
+  margin-right: 20px;
 }
 
-.footer .footer-social {
-  position: relative;
+/* Copyright */
+.copyright p {
+  margin: 20px 0;
+  font-size: 14px; /* Set your desired font size for copyright */
+}
+
+/* Copyright Link */
+.copyright a {
+  color: #fff; /* Copyright link color */
+  text-decoration: none;
+}
+
+/* Hover Effect for Copyright Link (Optional) */
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+
+/* =============================
+
+---------- Cookie Start -----
+
+================================*/
+
+/* Cookie Consent Modal Container */
+.cookie-consent-modal {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background color */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Cookie Content */
+.cookie-content {
+  background-color: #fff; /* Background color of the modal */
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box shadow for the modal */
+}
+
+.cookie-content img {
+  width: 90px; /* Set the width of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.cookie-content h1 {
+  font-size: 24px; /* Set your desired font size */
+  margin: 10px 0;
+}
+
+.cookie-content p {
+  font-size: 16px; /* Set your desired font size */
+  margin-bottom: 20px;
+}
+
+/* Read More Link (Toggle Expanded Content) */
+.read-more-link {
+  cursor: pointer;
+  color: #007bff; /* Link color */
+  text-decoration: underline;
+}
+
+/* Expanded Content (Hidden by default) */
+.expanded-content {
+  display: none;
   margin-top: 20px;
 }
 
-.footer .footer-social a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  padding: 7px 0;
-  text-align: center;
-  border: 1px solid rgba(256, 256, 256, 0.3);
-  border-radius: 60px;
-  transition: 0.3s;
+/* Accept and Cancel Buttons */
+.btns-cookie {
+  margin-top: 20px;
 }
 
-.footer .footer-social a i {
-  font-size: 15px;
-  color: #ffffff;
+.button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px; /* Set your desired font size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.footer .footer-social a:hover {
-  background: #fdbe33;
-  border-color: #fdbe33;
+.button.accept {
+  background-color: #007bff; /* Accept button background color */
+  color: #fff; /* Accept button text color */
 }
 
-.footer .footer-social a:hover i {
-  color: #030f27;
+.button.cancel {
+  background-color: #ccc; /* Cancel button background color */
+
 }
 
-.footer .newsletter .form {
-  position: relative;
-  max-width: 400px;
-  margin: 0 auto;
-}
 
-.footer .newsletter input {
-  height: 50px;
-  border: 2px solid #121518;
-  border-radius: 0;
-}
-
-.footer .newsletter .btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  height: 40px;
-  padding: 8px 10px;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #fdbe33;
-  background: #121518;
-  border-radius: 0;
-  border: 2px solid #fdbe33;
-  transition: 0.3s;
-}
-
-.footer .newsletter .btn:hover {
-  color: #121518;
-
-  background: #fdbe33;
-}
-
-.footer .footer-menu .f-menu {
-  position: relative;
-  padding: 15px 0;
-  font-size: 0;
-  text-align: center;
-  border-top: 1px solid rgba(256, 256, 256, 0.1);
-  border-bottom: 1px solid rgba(256, 256, 256, 0.1);
-}
-
-.footer .footer-menu .f-menu a {
-  color: #ffffff;
-  font-size: 16px;
-  margin-right: 15px;
-  padding-right: 15px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer .footer-menu .f-menu a:hover {
-  color: #fdbe33;
-}
-
-.footer .footer-menu .f-menu a:last-child {
-  margin-right: 0;
-  padding-right: 0;
-  border-right: none;
-}
-
-.footer .copyright {
-  padding: 30px 15px;
-}
-
-.footer .copyright p {
-  margin: 0;
-  color: #ffffff;
-}
-
-.footer .copyright .col-md-6:last-child p {
-  text-align: right;
-}
-
-.footer .copyright p a {
-  color: #fdbe33;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-.footer .copyright p a:hover {
-  color: #ffffff;
-}
+/* Cookie End */

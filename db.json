@@ -1,0 +1,15 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "json server",
+      "email": "tjj@hgmail.com",
+      "surname": "matsaba",
+      "phone": "0730543747",
+      "message": "message"
+    },
+    {
+      "id": 2
+    }
+  ]
+}

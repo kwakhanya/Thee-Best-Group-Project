@@ -1,5 +1,5 @@
 html {
-  font-family: "Ubuntu", Arial, sans-serif;
+  font-family: "JetBrains Mono", Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -250,7 +250,7 @@ section {
 }
 
 /* Style the "Play Tetris" button */
-#button a {
+#gameBtn a {
   display: inline-block;
   background-color: #007bff;
   color: #fff;
@@ -260,11 +260,11 @@ section {
   transition: background-color 0.3s ease;
 }
 
-#button a:hover {
+#gameBtn a:hover {
   background-color: #d8dde2;
 }
 
-#button a:hover,
+#gameBtn a:hover,
 .details a:hover {
   background-color: #2e3f52; /* Background color on hover */
   text-decoration: none;
@@ -305,7 +305,7 @@ section {
 
 /* Hover effect */
 .time h2:hover {
-  background-color: #007bff; /* Background color on hover */
+  background-color: #94bdec; /* Background color on hover */
   color: #fff; /* Text color on hover */
   text-decoration: none;
 }
@@ -330,12 +330,17 @@ section {
 }
 
 .details a {
-  color: #007bff;
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
   text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .details a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Clear floats for list items */
@@ -513,7 +518,7 @@ section {
 }
 .map {
   padding: 0;
-  max-width: 314px;
+  max-width: 450px;
     height: 328px;
 }
 .map iframe {
@@ -722,5 +727,38 @@ section {
 
 }
 
-
 /* Cookie End */
+/* Popup Styles */
+#info-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.close-btn:hover {
+  color: #ff0000; /* Change to your desired hover color */
+}
+
+/* Customize other styles as needed */
+
+
+ 

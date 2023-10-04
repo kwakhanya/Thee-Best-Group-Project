@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener('scroll', () => {
         const sections = document.querySelectorAll('section'); // Select all sections
-    
+
         sections.forEach((section) => {
             const link = document.querySelector(`a[href="#${section.id}"]`);
             const linkRect = link.getBoundingClientRect();
             const sectionRect = section.getBoundingClientRect();
-    
+
             // Check if the link is in the viewport
             if (
                 linkRect.top >= sectionRect.top &&
@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelectorAll('a.nav-link').forEach((navLink) => {
                     navLink.classList.remove('active');
                 });
-    
+
                 // Add active class to the current link
                 link.classList.add('active');
             }
         });
     });
-    
+
     // Image Slides 
     const slider = document.querySelector('.slider');
     const sliderImages = document.querySelectorAll('.slider img');
@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add similar lines for other events
     }, 1000); // Update every second
 
+
     // Back To Top Button
 
     // Get the button element
@@ -114,33 +115,110 @@ document.addEventListener("DOMContentLoaded", function () {
         document.documentElement.scrollTop = 0;
     };
 
+    // Validate Form 
+    const form = document.getElementById("form");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+  
+        // Get the values of the form fields.
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const surname = document.getElementById("surname").value;
+        const mobile = document.getElementById("mobile").value;
+        const message = document.getElementById("message").value;
+
+      
+        // Validate the name field.
+        if (name === "") {
+          // Display an error message.
+          alert("Please enter your name.");
+          // Focus on the name field.
+          document.getElementById("name").focus();
+          return false;
+        }
+      
+        // Validate the email field.
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        if (!emailRegex.test(email)) {
+          // Display an error message.
+          alert("Please enter a valid email address.");
+          // Focus on the email field.
+          document.getElementById("email").focus();
+          return false;
+        }
+      
+        // Validate the surname field.
+        if (surname === "") {
+          // Display an error message.
+          alert("Please enter your surname.");
+          // Focus on the surname field.
+          document.getElementById("surname").focus();
+          return false;
+        }
+      
+        // Validate the mobile field.
+        const mobileRegex = /^\d+$/;
+        if (!mobileRegex.test(mobile)) {
+          // Display an error message.
+          alert("Please enter a valid mobile number.");
+          // Focus on the mobile field.
+          document.getElementById("mobile").focus();
+          return false;
+        }
+      
+        // Validate the message field.
+        if (message === "") {
+          // Display an error message.
+          alert("Please enter a message.");
+          // Focus on the message field.
+          document.getElementById("message").focus();
+          return false;
+        }
+ 
     // Send simple form to server
-    const form = document.querySelector('#form');
+    const formData = {
+        name,
+        email,
+        surname,
+        mobile,
+        message
+    };
 
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-
+    try {
         const response = await fetch("http://localhost:3000/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(Object.fromEntries(formData)),
+            body: JSON.stringify(formData),
         });
+
         if (response.ok) {
             // The form data was successfully posted.
             // You can display a success message to the user here.
-            alert("User saved Succefully");
-            console.log("Users:", formData);
+            //showPopup();
         } else {
             // There was an error posting the form data.
             // You can display an error message to the user here.
             console.error('Something went wrong with retrieving users!');
-            console.log(error);
         }
-    });
+    } catch (error) {
+        console.error('Error occurred:', error);
+    }
+      });
+      
+
+    // function showPopup() {
+    //     const popup = document.getElementById('info-popup');
+    //     popup.style.display = 'block';
+    //     // Clear the form fields
+    //     document.getElementById('myForm').reset();
+    // }
+    // function hidePopup() {
+    //     const popup = document.getElementById('info-popup');
+    //     popup.style.display = 'none';
+    // }
 
     // Cookies Function
 
@@ -155,14 +233,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const cancelButton = document.querySelector('.button.cancel');
 
     acceptButton.addEventListener('click', function () {
+        // Set a flag in localStorage to remember that the user has accepted the cookie policy
+        localStorage.setItem('cookieConsentAccepted', 'true');
         hideCookieConsentModal();
     });
-
 
     cancelButton.addEventListener('click', function () {
         hideCookieConsentModal();
     });
 
+    // Function to hide the cookie consent modal
     function hideCookieConsentModal() {
         const modal = document.querySelector('.cookie-consent-modal');
         modal.style.display = 'none';
@@ -181,8 +261,15 @@ document.addEventListener("DOMContentLoaded", function () {
             readMoreLink.textContent = 'Read More';
         }
     });
-    // Show the cookie consent modal when the page loads (2-second delay)
+
+    // Check if the user has already accepted the cookie policy in localStorage
     window.onload = function () {
-        setTimeout(showCookieConsentModal, 2000);
+        const cookieConsentAccepted = localStorage.getItem('cookieConsentAccepted');
+
+        if (cookieConsentAccepted !== 'true') {
+            // Show the cookie consent modal with a 2-second delay if not already accepted
+            setTimeout(showCookieConsentModal, 2000);
+        }
     };
+
 });

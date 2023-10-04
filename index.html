@@ -13,43 +13,43 @@
 
 <body>
     <!-- Nav Start -->
-<!-- Nav Start -->
-<nav class="navbar navbar-expand-lg bg-light fixed-top">
-    <div class="container-fluid">
-        <a href="#home" class="navbar-brand mb-0 h2">
-            <img class="d-inline-block align-top" src="images/logo.png" alt="logo" width="30" height="30" />
-            Thee Best Construction
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center nav-underline" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item" style="color: blue;">
-                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about-us">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#event">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact-us">Contact</a>
-                </li>
-            </ul>
+    <!-- Nav Start -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <div class="container-fluid">
+            <a href="#home" class="navbar-brand mb-0 h2">
+                <img class="d-inline-block align-top" src="images/logo.png" alt="logo" width="30" height="30" />
+                Thee Best Construction
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center nav-underline" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item" style="color: blue;">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-us">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#event">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-us">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-    </div>
-</nav>
+    </nav>
 
     <!-- Nav End -->
 
@@ -222,10 +222,9 @@
                     engagement with you all!
                 </p>
                 <!-- Tetris Start -->
-                <div id="gameBtn">
-                    <button
-                        onclick="window.open('TheeBest-Tetris/tetris.html', 'Tetris Game', 'width=800,height=600')">Play
-                        Game</button>
+                <div id="gameBtn" class="gameBtn">
+                    <a onclick="window.open('TheeBest-Tetris/tetris.html', 'Tetris Game', 'width=800,height=600')">Play
+                        Game</a>
                 </div>
             </div>
         </div>
@@ -303,7 +302,7 @@
             <!-- Form -->
             <div class="contact form">
                 <h3>Send a Message</h3>
-                <form action="http://localhost:3000/users" id="form">
+                <form id="form" >
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
@@ -338,6 +337,13 @@
                         </div>
                     </div>
                 </form>
+                <!-- Centered Pop-up Modal -->
+                <div id="info-popup" class="popup" style="width: 300px; height: 150px;">
+                    <div class="popup-content">
+                        <span class="close-btn" onclick="hidePopup()">&times;</span>
+                        <p>Message sent!</p>
+                    </div>
+                </div>
             </div>
             <!-- Contact details -->
             <div class="contact info">
@@ -370,6 +376,14 @@
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13231.987639750349!2d18.570538710038015!3d-33.992613130006006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc4505ef538661%3A0xaebddaf9755f7da9!2sNyanga%2C%20Cape%20Town%2C%207750!5e0!3m2!1sen!2sza!4v1696228054549!5m2!1sen!2sza"
                     style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        
+        <!-- Centered Pop-up Modal -->
+        <div id="info-popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="hidePopup()">&times;</span>
+                <p>Message sent!</p>
             </div>
         </div>
     </section>

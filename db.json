@@ -1,15 +1,60 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "name": "json server",
-      "email": "tjj@hgmail.com",
+      "name": "Thabiso Matsaba",
+      "email": "thabisomaysaba96@hgmail.com",
       "surname": "matsaba",
-      "phone": "0730543747",
+      "mobile": "0730543747",
       "message": "message"
     },
     {
+      "name": "Thabiso Matsaba",
+      "email": "220296006@mycput.ac.za",
+      "surname": "Matsaba",
+      "mobile": "0730493949",
+      "message": "mobile",
       "id": 2
+    },
+    {
+      "name": "Thabiso Matsaba",
+      "email": "220296006@mycput.ac.za",
+      "surname": "Matsaba",
+      "mobile": "0730493949",
+      "message": "YYK,YI,U",
+      "id": 3
+    },
+    {
+      "name": "",
+      "email": "",
+      "surname": "",
+      "mobile": "",
+      "message": "",
+      "id": 4
+    },
+    {
+      "name": "Thabiso Matsaba",
+      "email": "220296006@mycput.ac.za",
+      "surname": "Matsaba",
+      "mobile": "0730493949",
+      "message": "HFNMHFY",
+      "id": 5
+    },
+    {
+      "name": "Thabiso Matsaba",
+      "email": "220296006@mycput.ac.za",
+      "surname": "Matsaba",
+      "mobile": "0730493949",
+      "message": "EWfewgergwRGERW",
+      "id": 6
+    },
+    {
+      "name": "Thabiso Matsaba",
+      "email": "220296006@mycput.ac.za",
+      "surname": "Matsaba",
+      "mobile": "0730493949",
+      "message": "ACSSDDVA",
+      "id": 7
     }
   ]
 }

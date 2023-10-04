@@ -84,28 +84,32 @@ document.addEventListener("DOMContentLoaded", function () {
  };
 
 // Send simple form to server
-document.getElementById("form12").addEventListener('submit', event => {
-  event.preventDefault();
-  const formData = new FormData(document.getElementById("form12"));
-  const data = Object.fromEntries(formData);
+const form = document.querySelector('#form');
 
-  fetch('http://localhost:3000/posts', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-  })
-      .then(response => response.json())
-      .then(obj => {
-          console.log(obj);
-          alert.success("User saved");
-      })
-      .catch(error => {
-          console.error('Something went wrong with retrieving users!');
-          console.log(error);
-      });
-      console.log('http://localhost:3000/posts');
+form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+  const formData = new FormData(form);
+
+  const response = await fetch("http://localhost:3000/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(Object.fromEntries(formData)),
+  });
+  if (response.ok) {
+    // The form data was successfully posted.
+    // You can display a success message to the user here.
+    alert("User saved");
+    console.log("Users:", formData);
+  } else {
+    // There was an error posting the form data.
+    // You can display an error message to the user here.
+    console.error('Something went wrong with retrieving users!');
+    console.log(error);
+  }
+    
 });
 
 

@@ -1,19 +1,19 @@
 {
-  "users": [
+  "messages": [
     {
       "id": 1,
-      "name": "Thabiso Matsaba",
-      "email": "thabisomaysaba96@hgmail.com",
-      "surname": "matsaba",
+      "name": "Thabiso",
+      "email": "thabisomatsaba96@gmail.com",
+      "surname": "Matsaba",
       "mobile": "0730543747",
       "message": "message"
     },
     {
       "name": "Thabiso Matsaba",
       "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
+      "surname": "Galadla",
       "mobile": "0730493949",
-      "message": "aefwewf",
+      "message": "cacwwa",
       "id": 2
     },
     {
@@ -21,7 +21,7 @@
       "email": "220296006@mycput.ac.za",
       "surname": "Matsaba",
       "mobile": "0730493949",
-      "message": "e323r3",
+      "message": "1wdd323d",
       "id": 3
     },
     {
@@ -29,7 +29,7 @@
       "email": "220296006@mycput.ac.za",
       "surname": "Matsaba",
       "mobile": "0730493949",
-      "message": "efwrgr",
+      "message": "segeg",
       "id": 4
     },
     {
@@ -37,7 +37,7 @@
       "email": "220296006@mycput.ac.za",
       "surname": "Matsaba",
       "mobile": "0730493949",
-      "message": "fvdberhr",
+      "message": "vrwegfeg",
       "id": 5
     },
     {
@@ -45,120 +45,50 @@
       "email": "220296006@mycput.ac.za",
       "surname": "Matsaba",
       "mobile": "0730493949",
-      "message": "gfngn",
+      "message": "trvwrtt",
       "id": 6
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "Thabiso",
+      "email": "Matsaba",
+      "phone": "0730543747",
+      "password": "123456",
+      "confirm-password": "12345"
     },
     {
-      "name": "sfffwf",
+      "username": "220296006@mycput.ac.za",
       "email": "220296006@mycput.ac.za",
-      "surname": "grhth",
-      "mobile": "0730493949",
-      "message": " rttrr",
-      "id": 7
+      "phone": "0730493949",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 2
     },
     {
-      "name": "Thabiso Matsaba",
+      "username": "Vuyolwethu",
+      "email": "mfidiv@gmail.com",
+      "phone": "0730493758",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 3
+    },
+    {
+      "username": "220296006@mycput.ac.za",
       "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 8
+      "phone": "0730493949",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 4
     },
     {
-      "name": "Thabiso Matsaba",
+      "username": "220296006@mycput.ac.za",
       "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 9
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 10
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 11
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 12
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 13
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 14
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
-      "mobile": "0730493949",
-      "message": "dfnfn",
-      "id": 15
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
-      "mobile": "0730493949",
-      "message": "dfs fnfn",
-      "id": 16
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
-      "mobile": "0730493949",
-      "message": "mj kjk bk",
-      "id": 17
-    },
-    {
-      "name": "Thabiso",
-      "email": "thabisomatsaba96@gmail.com",
-      "surname": "Matsba",
-      "mobile": "0730493949",
-      "message": "I want a house please",
-      "id": 18
-    },
-    {
-      "name": "Thabiso",
-      "email": "thabisomatsaba96@gmail.com",
-      "surname": "Matsba",
-      "mobile": "0730493949",
-      "message": "I want a house please",
-      "id": 19
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
-      "mobile": "0730493949",
-      "message": "dhstdhtjshj",
-      "id": 20
+      "phone": "0730493949",
+      "password": "12345",
+      "confirmPassword": "12345",
+      "id": 5
     }
   ]
 }

@@ -13,7 +13,6 @@
 
 <body>
     <!-- Nav Start -->
-    <!-- Nav Start -->
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container-fluid">
             <a href="#home" class="navbar-brand mb-0 h2">
@@ -27,31 +26,67 @@
             </button>
             <div class="collapse navbar-collapse justify-content-center nav-underline" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item" style="color: blue;">
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about-us">About</a>
+                        <a class="nav-link" aria-current="page" href="#about-us">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" aria-current="page" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#event">Events</a>
+                        <a class="nav-link" aria-current="page" href="#event">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact-us">Contact</a>
+                        <a class="nav-link" aria-current="page" href="#contact-us">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" id="openSignUp">Sign Up</a>
                     </li>
                 </ul>
             </div>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search" id="searchPattern" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit" onclick="searchContent()">Search</button>
             </form>
         </div>
     </nav>
-
     <!-- Nav End -->
+
+    <!-- Sign Up Start -->
+    <div class="signup-overlay" id="signupOverlay">
+        <div class="signup-form">
+          <span class="close-signup" id="closeSignUp">&times;</span>
+          <h2>Sign Up</h2>
+          <form id="signupForm">
+            <input type="text" id="username" name="username" autocomplete="username" required placeholder="Username">
+      
+            <input type="email" id="emails" name="email" autocomplete="email" required placeholder="Email">
+      
+            <input type="text" id="phone" name="phone" autocomplete="phone" required placeholder="Phone">
+      
+            <input type="password" id="password" name="password"  autocomplete="password" required placeholder="Password">
+      
+            <input type="password" id="confirm-password" autocomplete="cofirm-password" placeholder="Confirm Password"
+              placeholder="Confirm Password">
+      
+            <button type="submit">Sign Up</button>
+            <button type="close"> Close </button>
+          </form>
+        </div>
+      </div>
+      
+    <!-- Sign-up End -->
+
+    <div id="info-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="hidePopup()" hidden="true">&times;</span>
+            <p hidden="true">Message sent!</p>
+        </div>
+    </div>
+
+
 
     <!-- Home Start -->
     <section class="home" id="home">
@@ -302,11 +337,11 @@
             <!-- Form -->
             <div class="contact form">
                 <h3>Send a Message</h3>
-                <form id="form" >
+                <form id="form">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
-                                <span>Names</span>
+                                <span>Name</span>
                                 <input type="text" id="name" name="name" placeholder="Name">
                             </div>
                             <div class="inputBox">
@@ -336,12 +371,14 @@
                             </div>
                         </div>
                     </div>
+                    <input type="file" id="image" name="imageInput">
+                    <button type="button" id="uploadButton">Upload</button>
                 </form>
                 <!-- Centered Pop-up Modal -->
                 <div id="info-popup" class="popup" style="width: 300px; height: 150px;">
                     <div class="popup-content">
-                        <span class="close-btn" onclick="hidePopup()">&times;</span>
-                        <p>Message sent!</p>
+                        <span class="close-btn" onclick="hidePopup()" hidden="true">&times;</span>
+                        <p hidden="true">Message sent!</p>
                     </div>
                 </div>
             </div>
@@ -378,96 +415,122 @@
                     style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-        
-        <!-- Centered Pop-up Modal -->
-        <div id="info-popup" class="popup">
-            <div class="popup-content">
-                <span class="close-btn" onclick="hidePopup()">&times;</span>
-                <p>Message sent!</p>
+
+        <!-- Contact End -->
+
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <p id="modalMessage"></p>
             </div>
         </div>
-    </section>
-    <!-- Contact End -->
 
-    <!-- Footer Start-->
-    <div class="footer" data-wow-delay="0.3s">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-lg-3">
-                    <div class="footer-contact">
-                        <h2>Office Contact</h2>
-                        <p><i class="fa fa-map-marker-alt"></i> Cape Town, South Africa</p>
-                        <p><i class="fa fa-phone-alt"></i>+06 9422 6621</p>
-                        <p><i class="fa fa-envelope"></i>Construction@gmail.com</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+
+        <!-- Cookie Start -->
+        <section class="cookie-consent-modal">
+            <div class="cookie-content">
+                <img src="images/cookie1.jpeg" alt="" height="90px" width="10px">
+                <h1><b>Cookie Consent</b></h1>
+                <p>Important! Please Verify Your actions
+                    We take your online security seriously. To protect you from clickjacking attacks, we request your
+                    attention. <span class="read-more-link">Read More</span></p>
+                <div class="expanded-content">
+                    <p>By clicking "Accept Cookies" below, you acknowledge that you understand the importance of
+                        verifying
+                        your
+                        actions on this
+                        website and that you consent to the use of cookies for a safer browsing experience. You can
+                        manage
+                        your
+                        cookie
+                        preferences in our Privacy Settings.</p><br>
+                </div>
+                <div class="btns-cookie">
+                    <button class="button accept">Accept</button>
+                    <button class="button cancel">Cancel</button>
+                </div>
+            </div>
+        </section>
+        <!-- Cookie End -->
+
+        <!-- Scroll Up Button -->
+        <button id="backToTopBtn" title="Back to Top">↑</button>
+        <!-- Scoll End -->
+
+        <!-- Footer Start-->
+        <div class="footer" data-wow-delay="0.3s">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="footer-contact">
+                            <h2>Office Contact</h2>
+                            <p><i class="fa fa-map-marker-alt"></i> Cape Town, South Africa</p>
+                            <p><i class="fa fa-phone-alt"></i>+06 9422 6621</p>
+                            <p><i class="fa fa-envelope"></i>Construction@gmail.com</p>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container footer-menu">
-            <div class="f-menu">
-                <a href="">Terms of use</a>
-                <a href="">Privacy policy</a>
-                <a href="">Cookies</a>
-                <a href="">Help</a>
-                <a href="">FQAs</a>
+            <div class="container footer-menu">
+                <div class="f-menu">
+                    <a href="">Terms of use</a>
+                    <a href="">Privacy policy</a>
+                    <a href="">Cookies</a>
+                    <a href="">Help</a>
+                    <a href="">FQAs</a>
+                </div>
             </div>
-        </div>
-        <div class="container copyright">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; <a href="#">Thee Best Group 2023</a>, All Right Reserved.</p>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="#">Thee Best Group 2023</a>, All Right Reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Cookie Start -->
-    <section class="cookie-consent-modal">
-        <div class="cookie-content">
-            <img src="images/cookie1.jpeg" alt="" height="90px" width="10px">
-            <h1><b>Cookie Consent</b></h1>
-            <p>Important! Please Verify Your actions
-                We take your online security seriously. To protect you from clickjacking attacks, we request your
-                attention. <span class="read-more-link">Read More</span></p>
-            <div class="expanded-content">
-                <p>By clicking "Accept Cookies" below, you acknowledge that you understand the importance of verifying
-                    your
-                    actions on this
-                    website and that you consent to the use of cookies for a safer browsing experience. You can manage
-                    your
-                    cookie
-                    preferences in our Privacy Settings.</p><br>
-            </div>
-            <div class="btns-cookie">
-                <button class="button accept">Accept</button>
-                <button class="button cancel">Cancel</button>
-            </div>
-        </div>
-    </section>
-    <!-- Cookie End -->
-
-    <!-- Scroll Up Button -->
-    <button id="backToTopBtn" title="Back to Top">↑</button>
-    <!-- Scoll End -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ion icons/ionicons.js"></script>
-    <script src="main.js"></script>
-    <script src="
+        <!-- Footer End -->
+       <script>
+            // Searching 
+    function searchContent() {
+        const searchPattern = document.getElementById('searchPattern').value;
+        const bodyContent = document.body.innerHTML;
+  
+        // Escape special characters in the search pattern
+        const escapedPattern = searchPattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  
+        // Create a regular expression with the escaped pattern and 'gi' flags for global, case-insensitive search
+        const regex = new RegExp(escapedPattern, 'gi');
+  
+        // Replace matches with the pattern highlighted
+        const highlightedContent = bodyContent.replace(regex, match => `<span class="highlight">${match}</span>`);
+  
+        // Update the body content with highlighted matches
+        document.body.innerHTML = highlightedContent;
+  
+        // Scroll to the first occurrence of the highlighted element
+        const highlightedElement = document.querySelector('.highlight');
+        if (highlightedElement) {
+          highlightedElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+       </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ion icons/ionicons.js"></script>
+        <script src="main.js"></script>
+        <script src="
     https://kit.fontawesome.com/7bf459ae21.js" crossorigin="anonymous"></script>
 </body>
 

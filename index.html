@@ -68,8 +68,7 @@
       
             <input type="password" id="password" name="password"  autocomplete="password" required placeholder="Password">
       
-            <input type="password" id="confirm-password" autocomplete="cofirm-password" placeholder="Confirm Password"
-              placeholder="Confirm Password">
+            <input type="password" id="confirm-password" autocomplete="cofirm-password" placeholder="Confirm Password">
       
             <button type="submit">Sign Up</button>
             <button type="close"> Close </button>
@@ -79,15 +78,11 @@
       
     <!-- Sign-up End -->
 
-    <div id="info-popup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="hidePopup()" hidden="true">&times;</span>
-            <p hidden="true">Message sent!</p>
-        </div>
+    <div class="popup-message" id="popupMessage">
+        <span class="close-popup" id="closePopup">&times;</span>
+        <p id="popupMessageText" onclick="closePopupMessage()"></p>
     </div>
-
-
-
+    
     <!-- Home Start -->
     <section class="home" id="home">
         <div class="slider-container">
@@ -366,13 +361,19 @@
                             </div>
                             <div class="row100">
                                 <div class="inputBox">
+                                    <span>Attach Document</span>
+                                    <input type="file" id="image" name="imageInput">
+                                </div>
+                                <p id="fileDescription"></p>
+                            </div
+                            <div class="row100">
+                                <div class="inputBox">
                                     <input type="submit" value="Send">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <input type="file" id="image" name="imageInput">
-                    <button type="button" id="uploadButton">Upload</button>
+                
                 </form>
                 <!-- Centered Pop-up Modal -->
                 <div id="info-popup" class="popup" style="width: 300px; height: 150px;">

@@ -117,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Validate Form 
     const form = document.getElementById("form");
+    const fileInput = document.getElementById("image");
+    const fileDescription = document.getElementById("fileDescription");
 
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
@@ -185,27 +187,39 @@ document.addEventListener("DOMContentLoaded", function () {
             message
         };
 
+         // Append the selected file, if any
+        //  if (fileInput.files.length > 0) {
+        //     formData.append("imageInput", fileInput.files[0]);
+        // }
+
         try {
             const response = await fetch("http://localhost:3000/messages", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(formData)
             });
 
             if (response.ok) {
                 if (document.cookie.indexOf('cookieConsent=accepted') !== -1) {
-                    displayModal("Message sent successfully!");
-                    // Cookie policy has been accepted, hide the cookie consent popup
-                    hideCookieConsentModal();
+                    openPopupMessage("Message sent successfully!");
                 }
             } else {
-                console.error('Something went wrong with retrieving users!');
+                openPopupMessage('Something went wrong with retrieving users!');
             }
         } catch (error) {
+            closePopupMessage();
             console.error('Error occurred:', error);
         }
+         // Event listener to update the file description
+    // fileInput.addEventListener("change", function () {
+    //     if (fileInput.files.length > 0) {
+    //         fileDescription.textContent = "Selected file: " + fileInput.files[0].name;
+    //     } else {
+    //         fileDescription.textContent = "No file selected";
+    //     }
+    // });
     });
 
     function displayModal(message) {
@@ -221,7 +235,6 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         });
     }
-
 
     // Function to show the cookie consent modal
     function showCookieConsentModal() {
@@ -244,8 +257,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hide the cookie consent popup
         hideCookieConsentModal();
     });
-
-
 
     // Function to toggle "Read More" and "Read Less" text when clicked
     const readMoreLink = document.querySelector('.read-more-link');
@@ -305,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const openSignUpButton = document.getElementById("openSignUp");
     const closeSignUpButton = document.getElementById("closeSignUp");
     const signUpOverlay = document.getElementById("signupOverlay");
-    const signUpForm = document.getElementById("signupForm");
 
     // Function to open the sign-up form
     function openSignUp() {
@@ -333,8 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
     signupForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
-        const signupForm = document.getElementById("signupForm");
-        const closeButton = document.getElementById("closeButton");
+        const closeButton = document.getElementById("closeSignUp");
 
 
         const username = document.getElementById("username").value;
@@ -374,20 +383,48 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                alert("Sign-up successful!");
+                openPopupMessage("Sign-up successful!");
                 signupForm.reset();
             } else {
-                alert("Sign-up failed. Please try again later.");
+                openPopupMessage("Sign-up failed. Please try again later.");
             }
         } catch (error) {
+            closePopupMessage();
             console.error("An error occurred:", error);
         }
 
         closeButton.addEventListener("click", function () {
-        ///Close the sign-up form
-        const signupOverlay = document.getElementById("signupOverlay");
-        signupOverlay.style.display = "none";
+            ///Close the sign-up form
+            const signupOverlay = document.getElementById("signupOverlay");
+            signupOverlay.style.display = "none";
+        });
     });
-});
+
+    // Pop Function 
+
+    // Function to open the popup message with a given text
+    function openPopupMessage(message) {
+        const popupMessage = document.getElementById("popupMessage");
+        const popupMessageText = document.getElementById("popupMessageText");
+
+        // Set the message text
+        popupMessageText.textContent = message;
+
+        // Display the popup message
+        popupMessage.style.display = "block";
+    }
+
+    // Function to close the popup message
+    function closePopupMessage() {
+        const popupMessage = document.getElementById("popupMessage");
+
+        // Hide the popup message
+        popupMessage.style.display = "none";
+    }
+
+    // Event listener for closing the popup message
+    const closePopupButton = document.getElementById("closePopup");
+    closePopupButton.addEventListener("click", closePopupMessage);
+
 
 });

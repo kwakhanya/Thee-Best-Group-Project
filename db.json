@@ -6,47 +6,16 @@
       "email": "thabisomatsaba96@gmail.com",
       "surname": "Matsaba",
       "mobile": "0730543747",
-      "message": "message"
+      "message": "message",
+      "image": "Pharmacy.jpg"
     },
     {
       "name": "Thabiso Matsaba",
       "email": "220296006@mycput.ac.za",
-      "surname": "Galadla",
+      "surname": "Matsaba",
       "mobile": "0730493949",
-      "message": "cacwwa",
+      "message": " nnn",
       "id": 2
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
-      "mobile": "0730493949",
-      "message": "1wdd323d",
-      "id": 3
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
-      "mobile": "0730493949",
-      "message": "segeg",
-      "id": 4
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
-      "mobile": "0730493949",
-      "message": "vrwegfeg",
-      "id": 5
-    },
-    {
-      "name": "Thabiso Matsaba",
-      "email": "220296006@mycput.ac.za",
-      "surname": "Matsaba",
-      "mobile": "0730493949",
-      "message": "trvwrtt",
-      "id": 6
     }
   ],
   "users": [
@@ -62,33 +31,17 @@
       "username": "220296006@mycput.ac.za",
       "email": "220296006@mycput.ac.za",
       "phone": "0730493949",
-      "password": "12345",
-      "confirmPassword": "12345",
+      "password": "dddd",
+      "confirmPassword": "dddd",
       "id": 2
     },
     {
-      "username": "Vuyolwethu",
-      "email": "mfidiv@gmail.com",
-      "phone": "0730493758",
-      "password": "12345",
-      "confirmPassword": "12345",
+      "username": "220296006@mycput.ac.za",
+      "email": "220296006@mycput.ac.za",
+      "phone": "0730493949",
+      "password": "12",
+      "confirmPassword": "12",
       "id": 3
-    },
-    {
-      "username": "220296006@mycput.ac.za",
-      "email": "220296006@mycput.ac.za",
-      "phone": "0730493949",
-      "password": "12345",
-      "confirmPassword": "12345",
-      "id": 4
-    },
-    {
-      "username": "220296006@mycput.ac.za",
-      "email": "220296006@mycput.ac.za",
-      "phone": "0730493949",
-      "password": "12345",
-      "confirmPassword": "12345",
-      "id": 5
     }
   ]
 }

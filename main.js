@@ -203,10 +203,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 if (document.cookie.indexOf('cookieConsent=accepted') !== -1) {
-                    openPopupMessage("Message sent successfully!");
+                    alert("Message sent successfully!");
                 }
             } else {
-                openPopupMessage('Something went wrong with retrieving users!');
+                alert('Something went wrong with retrieving users!');
             }
         } catch (error) {
             closePopupMessage();
@@ -383,10 +383,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             if (response.ok) {
-                openPopupMessage("Sign-up successful!");
+                alert("Sign-up successful!");
                 signupForm.reset();
             } else {
-                openPopupMessage("Sign-up failed. Please try again later.");
+                alert("Sign-up failed. Please try again later.");
             }
         } catch (error) {
             closePopupMessage();

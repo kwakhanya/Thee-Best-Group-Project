@@ -461,7 +461,7 @@
         <div class="chat-button-container">
             <button id="chatButton" onclick="toggleChatFrame()">Open Chat</button>
             <div id="chatAppContainer"></div>
-            <iframe id="chatFrame" src="http://localhost:4000" frameborder="0"></iframe>
+            <iframe id="chatFrame" src="http://localhost:4000" frameborder="0" onload="adjustIframeHeight()"></iframe>
         </div>
         <!-- Scroll Up Button -->
         <button id="backToTopBtn" title="Back to Top">↑</button>
@@ -511,12 +511,23 @@
         <script>
             function toggleChatFrame() {
                 var chatFrame = document.getElementById("chatFrame");
+                var chatButton = document.getElementById("chatButton");
+
                 if (chatFrame.style.display === "" || chatFrame.style.display === "none") {
                     chatFrame.style.display = "block";
+                    chatButton.textContent = "Close Chat"; // Change button text
                 } else {
                     chatFrame.style.display = "none";
+                    chatButton.textContent = "Open Chat"; // Change button text back
                 }
             }
+            function adjustIframeHeight() {
+                const iframe = document.getElementById("chatFrame");
+                if (iframe) {
+                    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
+                }
+            }
+
         </script>
         <script>
             // Searching 

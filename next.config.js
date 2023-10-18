@@ -1,8 +1,3 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
-
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack'); // Import the dotenv-webpack plugin
 

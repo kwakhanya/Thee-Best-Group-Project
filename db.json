@@ -1,15 +1,23 @@
 {
-  "posts": [
+  "messages": [
     {
       "id": 1,
-      "name": "json server",
-      "email": "tjj@hgmail.com",
-      "surname": "matsaba",
-      "phone": "0730543747",
-      "message": "message"
-    },
+      "name": "Thabiso",
+      "email": "thabisomatsaba96@gmail.com",
+      "surname": "Matsaba",
+      "mobile": "0730543747",
+      "message": "message",
+      "image": "Pharmacy.jpg"
+    }
+  ],
+  "users": [
     {
-      "id": 2
+      "id": 1,
+      "username": "Thabiso",
+      "email": "Matsaba",
+      "phone": "0730543747",
+      "password": "123456",
+      "confirm-password": "12345"
     }
   ]
 }

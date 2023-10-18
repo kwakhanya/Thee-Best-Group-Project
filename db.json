@@ -18,6 +18,22 @@
       "phone": "0730543747",
       "password": "123456",
       "confirm-password": "12345"
+    },
+    {
+      "username": "220296006@mycput.ac.za",
+      "email": "220296006@mycput.ac.za",
+      "phone": "0730493949",
+      "password": "1234",
+      "confirmPassword": "1234",
+      "id": 2
+    },
+    {
+      "username": "het",
+      "email": "220296006@mycput.ac.za",
+      "phone": "the",
+      "password": "123",
+      "confirmPassword": "123",
+      "id": 3
     }
   ]
 }

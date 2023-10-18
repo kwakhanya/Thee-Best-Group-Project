@@ -1,0 +1,33 @@
+{
+  "name": "thee-best-group-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "json-server": "json-server --watch db.json --port 3000",
+    "dev": "concurrently \"npm run start\" \"npm run json-server\" \"node server.js\"",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase": "^10.5.0",
+    "next": "^13.5.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sentiment": "^5.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10",
+    "dotenv-webpack": "^8.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.5",
+    "json-server": "^0.17.4",
+    "postcss": "^8",
+    "tailwindcss": "^3"
+  }
+}

@@ -931,3 +931,11 @@ button[type="submit"]:hover {
 #chatButton:hover {
   background-color: #0056b3; /* Change color on hover */
 }
+
+/* iFrame Container */
+#chatFrame{
+  width: 100%; /* Set the iframe width */
+  max-width: 600px; /* Max width for responsiveness */
+  height: 500px;
+  margin-right: 280px; 
+}

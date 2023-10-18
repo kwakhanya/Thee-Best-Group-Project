@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"; // Import React and Component
 import Layout from "../components/Layout";
 import Chat from "../components/Chat";
 
@@ -7,10 +7,10 @@ class IndexPage extends Component {
     super();
     this.state = { user: "" }; // Initialize 'user' as an empty string
   }
+
   handleKeyUp = (evt) => {
     if (evt.keyCode === 13) {
       const user = evt.target.value;
-
       this.setState({ user });
     }
   };

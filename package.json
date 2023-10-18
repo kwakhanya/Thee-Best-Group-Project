@@ -6,7 +6,7 @@
     "json-server": "json-server --watch db.json --port 3000",
     "dev": "concurrently \"npm run start\" \"npm run build\" \"npm run json-server\" \"node server.js\"",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "set NODE_ENV=production&& node server.js",
     "lint": "next lint"
   },
   "dependencies": {

@@ -459,7 +459,9 @@
 
         <!-- Chat App Start -->
         <div class="chat-button-container">
-            <button id="chatButton">Open Chat</button>
+            <button id="chatButton" onclick="toggleChatFrame()">Open Chat</button>
+            <div id="chatAppContainer"></div>
+            <iframe id="chatFrame" src="http://localhost:4000" frameborder="0"></iframe>
         </div>
         <!-- Scroll Up Button -->
         <button id="backToTopBtn" title="Back to Top">↑</button>
@@ -504,12 +506,17 @@
             </div>
         </div>
         <!-- Footer End -->
+
         <!-- Chat Button -->
         <script>
-            // JavaScript to open the chat page in a new window
-            document.getElementById("chatButton").addEventListener("click", function () {
-                window.open('http://localhost:3001',"Chat Window", "width=600,height=600");
-            });
+            function toggleChatFrame() {
+                var chatFrame = document.getElementById("chatFrame");
+                if (chatFrame.style.display === "" || chatFrame.style.display === "none") {
+                    chatFrame.style.display = "block";
+                } else {
+                    chatFrame.style.display = "none";
+                }
+            }
         </script>
         <script>
             // Searching 

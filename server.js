@@ -9,7 +9,7 @@ const { getFirestore, collection, getDocs, addDoc } = require("firebase/firestor
 const Sentiment = require("sentiment");
 
 const dev = process.env.NODE_ENV !== "production";
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 4000;
 const sentiment = new Sentiment();
 
 const firebaseConfig = {

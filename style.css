@@ -1,0 +1,595 @@
+html {
+  font-family: "Ubuntu", Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* =============================
+
+----------  Home Start ---------
+
+================================*/
+
+.slider-container {
+  position: relative;
+  max-width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-controls button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin: 5px 0;
+}
+/* Home End */
+
+/* =============================
+
+----------  Section Start --------
+
+================================*/
+
+section {
+  min-height: 100vh;
+  padding: 5rem 2rem;
+}
+
+/* Section End */
+
+/* =============================
+
+----------  About-Us Start --------
+
+================================*/
+
+/* Style the section background */
+.about-us {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Style the heading */
+.about-heading {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the table */
+.table-users {
+  width: 100%;
+  max-width: 957px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style table header cells */
+.table-users th {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style table data cells */
+.table-users td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style alternating table rows */
+.table-users tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style the profile pictures */
+.table-users .picture img {
+  max-width: 70px;
+  border-radius: 50%;
+}
+
+/* Style the description cell */
+.table-users td:nth-child(5) {
+  text-align: left;
+}
+/* About Us End */
+
+/* =============================
+
+-----  Services Start ----------
+
+================================ */
+
+/* Style the section background */
+.services {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Style the heading */
+.contact-heading {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the service content */
+.service-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Style the service list */
+.serve {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.serve-heading {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.serve ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.serve li {
+  margin-bottom: 10px;
+}
+
+/* Style the videos */
+.vids {
+  text-align: left;
+}
+
+.vids video {
+  max-width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.vids h4 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.vids span {
+  display: block;
+  margin-top: 5px;
+}
+
+.vids a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.vids a:hover {
+  text-decoration: none;
+}
+/* Service End */
+
+/* =============================
+
+---------- Event Start -----
+
+================================*/
+/* Style the section background */
+.event {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Style the heading */
+.about-heading {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the left content box */
+.leftBox {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.leftBox h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.leftBox p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Style the "Play Tetris" button */
+#gameBtn a {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#gameBtn a:hover {
+  background-color: #d8dde2;
+}
+
+#gameBtn a:hover,
+.details a:hover {
+  background-color: #2e3f52; /* Background color on hover */
+  text-decoration: none;
+}
+
+/* Style the events list */
+.events ul {
+  list-style: none;
+  padding: 0;
+}
+
+.events li {
+  margin-bottom: 30px;
+}
+
+/* Style the event time box */
+.time {
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+
+.time h2 {
+  font-size: 24px;
+  color: #333;
+  background-color: #f8f8f8; /* Background color for the timer */
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.time span {
+  display: block;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Hover effect */
+.time h2:hover {
+  background-color: #007bff; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+  text-decoration: none;
+}
+
+/* Style the event details box */
+.details {
+  float: right;
+  width: 70%;
+  text-align: left;
+}
+
+.details h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.details p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+/* Clear floats for list items */
+.events li::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Events End */
+
+/* =============================
+
+---------- Contact Start -----
+
+================================*/
+
+.contact-us{
+    /* background:linear-gradient(90deg,#0e3959 0.5rem,#0e3959 30%,#6d8996 30%,#03a9f5 100% ); */
+    background: rgb(243, 237, 237); ;
+    position: relative;
+    width: 100%;
+    padding: 40px 100px;
+  
+   
+  
+  }
+  .contact-us .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+   
+  
+  .contact-us .title h2{
+    font-weight: 500;
+    color: #fff;
+  }
+  
+   
+  
+  .form{
+    grid-area: form;
+  }
+  .info{
+    grid-area: info;
+  }
+  .map{
+    grid-area: map;
+  }
+  .contact{
+    padding:40px   ;
+    background: #fff;
+    box-shadow: 0 5px 35px rgba(0, 0, 0,0.15);
+  }
+  .box{
+    position:relative;
+    display: grid;
+    grid-template-columns: 2fr 1f;
+    grid-template-rows:5fr 4fr ;
+    grid-template-areas: 
+    "form info"
+    "form map";
+    grid-gap:20px;
+    margin-top: 20px;
+  
+   
+  
+  }
+  .contact h3{
+    color:#0e3959;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+   
+  
+  /* form */
+  .formBox{
+    position: relative;
+    width: 100%;
+  }
+  .formBox .row50{
+    display: flex;
+    gap: 20px;
+  
+  }
+  .inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+  } 
+  .formBox .row100 .inputBox{
+    width: 100%;
+  }
+  .inputBox span{
+    color:#0e3959;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  .inputBox input{
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    border: 1px solid #333;
+  }
+  .inputBox textarea{
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    border: 1px solid #333; 
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 10px;
+  }
+  
+   
+  
+  .inputBox input[type="submit"]{
+  background:#ff578b;
+  color:#fff;
+  border: none;
+  font-size: 1.1rem;
+  max-width: 120px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 14px 15px;
+  margin-left: 45rem;  
+  }
+  .inputBox ::placeholder{
+    color:#ff5f57;
+  }
+  /* Info */
+  .info{
+    background: #0e3959;
+  }
+  .info h3{
+    color: #fff;
+  }
+  .info .infoBox div{
+    display: flex;
+    align-items:center;
+    margin-bottom: 10px;
+  }
+  .info .infoBox div span{
+    min-width: 40px;
+    height: 40px;
+    color: #fff;
+    background: #18b7ff;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    font-size: 1.5rem;
+    border-radius: 50%; 
+    margin-right: 15px; 
+  }
+  
+   
+  
+  .info .infoBox div p{
+    color: #fff;
+    font-size: 1.1rem;
+  }
+  .info .infoBox div a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+   
+  
+  /*------Social Handles-----*/
+  .socials{
+    margin-top: 40px;
+    display: flex;
+  }
+  .socials li{
+    list-style: none;
+    margin-right: 15px;
+  }
+  .socials li a{
+    color: #fff;
+    font-size: 2rem;
+    color: #ccc;
+  }
+  
+   
+  
+  .sci li a:hover{
+    color:#fff
+  }
+  .map{
+  padding: 0; 
+  }
+  .map iframe{
+  width: 100%;
+  height: 100%;
+  }
+  /* Responsive designs */
+  @media(max-width:991px){
+    body{
+        background: #03a9f5;
+    }
+    .contact-us{
+        padding: 20px;  
+    }
+    .box{
+        grid-template-columns: 1fr;
+        grid-template-rows:5fr 4fr ;
+        grid-template-areas: 
+        "form"
+        "info"
+        "map";  
+    }
+    .map{
+        min-height: 300px;
+     }
+     .formBox .row50{
+        display: flex;
+        gap:0;
+        flex-direction: column;       
+    }
+    .contact{
+        padding:30px;
+    }
+    .inputBox{
+     width: 100%;
+    } 
+    .map{
+        min-height:300px ;
+        padding:0 ;
+    }
+    }
+/* Contact End */
+
+/* =============================
+
+---------- Scroll Button Start -----
+
+================================*/
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #backToTopBtn:hover {
+    background-color: #0056b3;
+  }

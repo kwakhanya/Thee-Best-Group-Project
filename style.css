@@ -908,3 +908,26 @@ button[type="submit"]:hover {
   font-size: 20px;
   color: #000;
 }
+
+/* Chat Button */
+.chat-button-container {
+  position: fixed;
+  bottom: 90px; /* Adjust the distance from the bottom as needed */
+  right: 20px; /* Adjust the distance from the right as needed */
+  z-index: 999; /* Ensure it appears above other content */
+}
+
+/* Style the chat button */
+#chatButton {
+  background-color: #007BFF; /* Customize the background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#chatButton:hover {
+  background-color: #0056b3; /* Change color on hover */
+}

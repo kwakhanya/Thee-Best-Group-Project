@@ -48,6 +48,21 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 const { app, db } = initializeFirebase();
 
+server.get("/messages", async (req, res) => {
+  // Set the CORS headers to allow the specified origin
+ res.header("Access-Control-Allow-Origin", "https://thee-best.netlify.app");
+  
+  // Get chat messages from Firebase (Firestore)
+  const chatMessages = [];
+  const querySnapshot = await getDocs(collection(db, "chatMessages"));
+  querySnapshot.forEach((doc) => {
+    chatMessages.push(doc.data());
+  });
+  
+  // Send the chat messages as a JSON response
+  res.json({ messages: chatMessages });
+});
+
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();
 
@@ -68,6 +83,8 @@ nextApp.prepare().then(() => {
   });
 
   server.post("/message", async (req, res) => {
+   
+    res.header("Access-Control-Allow-Origin", "https://thee-best.netlify.app");
     const chat = req.body;
     chat.timestamp = +new Date();
     chat.sentiment = sentiment.analyze(chat.message).score;

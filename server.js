@@ -31,7 +31,7 @@ const initializeFirebase = () => {
 const server = express();
 
 // Define an array of allowed origins
-const allowedOrigins = ["https://localhost:4000"];
+const allowedOrigins = ["https://thee-best.netlify.app/#", "https://localhost:4000"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {

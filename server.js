@@ -43,10 +43,9 @@ const corsOptions = {
 };
 
 
+erver.use(cors(corsOptions));  // Apply CORS middleware
 server.use(bodyParser.json());
-server.use(cors(corsOptions));
 server.use(bodyParser.urlencoded({ extended: true }));
-
 const { app, db } = initializeFirebase();
 
 const nextApp = next({ dev });

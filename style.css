@@ -934,6 +934,7 @@ button[type="submit"]:hover {
 
 /* iFrame Container */
 #chatFrame{
+  display: none;
   width: 100%; /* Set the iframe width */
   max-width: 600px; /* Max width for responsiveness */
   height: 500px;

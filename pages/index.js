@@ -36,7 +36,7 @@ class IndexPage extends Component {
               <div className="px-5 mx-5">
                 <span
                   className="d-block w-100 h1 text-light"
-                  style={{ marginTop: -50 }}
+                  style={{ marginTop: 0 }}
                 >
                   {user ? (
                     <span>

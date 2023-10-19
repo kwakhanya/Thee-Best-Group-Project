@@ -31,7 +31,7 @@ const initializeFirebase = () => {
 const server = express();
 
 // Define an array of allowed origins
-const allowedOrigins = ["https://localhost:4000"];
+const allowedOrigins = ["https://thee-best.netlify.app", "http://localhost:4000"];  // Update the localhost URL without the protocol and port
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -42,12 +42,22 @@ const corsOptions = {
   },
 };
 
-server.use(bodyParser.json());
-server.use(cors(corsOptions));
+
+server.use(cors(corsOptions));  // Apply CORS middleware
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
+
 const { app, db } = initializeFirebase();
+
+server.get("/messages", async (req, res) => {
+  const chatMessages = [];
+  const querySnapshot = await getDocs(collection(db, "chatMessages"));
+  querySnapshot.forEach((doc) => {
+    chatMessages.push(doc.data());
+  });
+  res.json({ messages: chatMessages });
+});
 
 const nextApp = next({ dev });
 const handle = nextApp.getRequestHandler();

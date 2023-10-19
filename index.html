@@ -336,7 +336,7 @@
             <!-- Form -->
             <div class="contact form">
                 <h3>Send a Message</h3>
-                <form id="form">
+                <div id="form">
                     <div class="formBox">
                         <div class="row50">
                             <div class="inputBox">
@@ -369,22 +369,26 @@
                                     <input type="file" id="image" name="imageInput">
                                 </div>
                                 <p id="fileDescription"></p>
-                            </div <div class="row100">
-                            <div class="inputBox">
-                                <input type="submit" value="Send">
+                            </div>
+                            <div class="row100">
+                                <div class="inputBox">
+                                    <input type="submit" value="Send">
+                                </div>
                             </div>
                         </div>
                     </div>
-            </div>
-
-            </form>
-            <!-- Centered Pop-up Modal -->
-            <div id="info-popup" class="popup" style="width: 300px; height: 150px;">
-                <div class="popup-content">
-                    <span class="close-btn" onclick="hidePopup()" hidden="true">&times;</span>
-                    <p hidden="true">Message sent!</p>
                 </div>
             </div>
+        </div>
+
+        </form>
+        <!-- Centered Pop-up Modal -->
+        <div id="info-popup" class="popup" style="width: 300px; height: 150px;">
+            <div class="popup-content">
+                <span class="close-btn" onclick="hidePopup()" hidden="true">&times;</span>
+                <p hidden="true">Message sent!</p>
+            </div>
+        </div>
         </div>
         <!-- Contact details -->
         <div class="contact info">

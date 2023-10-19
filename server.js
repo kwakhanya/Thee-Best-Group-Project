@@ -42,6 +42,7 @@ const corsOptions = {
   },
 };
 
+server.use(bodyParser.json());
 server.use(cors(corsOptions));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));

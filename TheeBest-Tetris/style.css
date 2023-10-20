@@ -1,83 +1,30 @@
+
 body {
-    background-color: rgb(142, 83, 83);
-    font-family: monospace;
-    text-align: center;
-    margin-top: 4rem;
-}
-
-.container {
+    background: #ba3c3c;
     display: flex;
-    align-items: center;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 2em;
     justify-content: center;
-    /* height: 100vh; */
-    gap: 4rem;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-/* CANVAS STYLE */
+.container1, .container2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.score{
+    font-size: 2rem;
+}
+.player {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 2rem;
+}
 canvas {
-    display: block;
-    border: 2px solid black;
-    margin: 0 auto; /* Center the canvas */
-}
-
-/* POP UP FORM STYLING */
-.popup {
-    display: none;
-    position: fixed;
-    top: 45%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-}
-.info{
-    font-size: 25px;
-    font-weight: 100;
-}
-.popup-content {
-    text-align: center;
-}
-#exit{
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px; 
-}
-.close {
-    float: right;
-    cursor: pointer;
-}
-/* BUTTON STYLING */
-.btn {
-    margin-top: 2rem;
-    
-}
-
-.btn button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-}
-
-.btn button#start {
-    background-color: #4CAF50; /* Green */
-    color: white;
-    
-}
-
-.btn button#reset {
-    background-color: #f44336; /* Red */
-    color: white;
-}
-
-.btn button:hover {
-    opacity: 0.8;
+    height: 90vh;
+    border: solid .2em #fff;
 }

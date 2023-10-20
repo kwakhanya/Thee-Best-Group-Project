@@ -1,172 +1,430 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Navigation and Toggle Menu
 
-  const hamburger = document.querySelector(".hamburger");
-  const nav = document.querySelector("nav");
-  hamburger.onclick = function () {
-  nav.classList.toggle("active");
-  };
+    // Window Scroll
 
-  // Home Images
-  const slider = document.querySelector(".slider");
-  let currentIndex = 0;
-  const slides = document.querySelectorAll(".slider img");
-  const totalSlides = slides.length;
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section'); // Select all sections
 
-  function updateSlider() {
-    const translateXValue = -currentIndex * 100 + "%";
-    slider.style.transform = `translateX(${translateXValue})`;
-  }
+        sections.forEach((section) => {
+            const link = document.querySelector(`a[href="#${section.id}"]`);
+            const linkRect = link.getBoundingClientRect();
+            const sectionRect = section.getBoundingClientRect();
 
-  function showSlide(index) {
-    if (index < 0) {
-      currentIndex = totalSlides - 1;
-    } else if (index >= totalSlides) {
-      currentIndex = 0;
-    } else {
-      currentIndex = index;
-    }
-    updateSlider();
-  }
+            // Check if the link is in the viewport
+            if (
+                linkRect.top >= sectionRect.top &&
+                linkRect.bottom <= sectionRect.bottom
+            ) {
+                // Remove active class from all links
+                document.querySelectorAll('a.nav-link').forEach((navLink) => {
+                    navLink.classList.remove('active');
+                });
 
-  // Automatically advance the slider every 3 seconds
-  setInterval(() => {
-    showSlide(currentIndex + 1);
-  }, 3000);
-
-  // Form Validation
-
-  const form = document.getElementById("form");
-  const username = document.getElementById("username");
-  const email = document.getElementById("email");
-  const message = document.getElementById("message");
-
-  // Add an EventListener to get user inputs
-  form.addEventListener("submit", (event) => {
-    if (!validateForm()) {
-      event.preventDefault(); // Prevent form submission if validation fails
-    }
-  });
-
-  // Custom validation function for the form
-  function validateForm() {
-    const nameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const messageValue = message.value.trim();
-
-    let isValid = true;
-
-    // Name validation
-    if (nameValue === "") {
-      showError(username, "Name is required");
-      isValid = false;
-    } else {
-      hideError(username);
-    }
-
-    // Email validation
-    const emailRegex = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
-    if (emailValue === "") {
-      showError(email, "Email is required");
-      isValid = false;
-    } else if (!emailValue.match(emailRegex)) {
-      showError(email, "Provide a valid email address");
-      isValid = false;
-    } else {
-      hideError(email);
-    }
-
-    // Message validation
-    if (messageValue === "") {
-      showError(message, "Message is required");
-      isValid = false;
-    } else {
-      hideError(message);
-    }
-
-    return isValid;
-  }
-
-  // Display error messages
-  function showError(element, message) {
-    const errorElement = element.nextElementSibling; // Assuming the error element follows the input element
-    errorElement.innerText = message;
-    errorElement.style.display = "block"; // Show the error message
-  }
-
-  // Hide error messages
-  function hideError(element) {
-    const errorElement = element.nextElementSibling; // Assuming the error element follows the input element
-    errorElement.innerText = "";
-    errorElement.style.display = "none"; // Hide the error message
-  }
-
-  // Get all the navigation links
-  const navLinks = document.querySelectorAll("nav ul li a");
-
-  // Add a scroll event listener to the window
-  window.addEventListener("scroll", () => {
-    // Get the current scroll position
-    const scrollPosition = window.scrollY;
-
-    // Loop through each navigation link
-    navLinks.forEach((link) => {
-      const sectionId = link.getAttribute("href").substring(1);
-      const section = document.getElementById(sectionId);
-
-      // Check if the section is in the viewport
-      if (
-        section.offsetTop <= scrollPosition + 100 &&
-        section.offsetTop + section.offsetHeight > scrollPosition + 100
-      ) {
-        // Remove the "highlighted" class from all links
-        navLinks.forEach((navLink) => {
-          navLink.classList.remove("highlighted");
+                // Add active class to the current link
+                link.classList.add('active');
+            }
         });
-
-        // Add the "highlighted" class to the current link
-        link.classList.add("highlighted");
-      }
     });
-  });
 
-  // Define the event dates (replace with your actual event dates)
-  const eventWorkshopDate = new Date("2023-09-22"); // Workshop date (YYYY-MM-DD)
-  const eventTeamBuildingDate = new Date("2023-10-06"); // Team Building date (YYYY-MM-DD)
-  const eventFundraisingDate = new Date("2023-10-12"); // Fundraising date (YYYY-MM-DD)
+    // Image Slides 
+    const slider = document.querySelector('.slider');
+    const sliderImages = document.querySelectorAll('.slider img');
+    const prevBtn = document.querySelector('#prevBtn');
+    const nextBtn = document.querySelector('#nextBtn');
+    const totalSlides = sliderImages.length;
+    let currentIndex = 0;
 
-  // Get the current date
-  const currentDate = new Date();
+    function updateSlider() {
+        const translateXValue = -currentIndex * 100 + "%";
+        slider.style.transform = `translateX(${translateXValue})`;
+    }
 
-  // Calculate the time differences in milliseconds
-  const timeDifferenceWorkshop = eventWorkshopDate - currentDate;
-  const timeDifferenceTeamBuilding = eventTeamBuildingDate - currentDate;
-  const timeDifferenceFundraising = eventFundraisingDate - currentDate;
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % sliderImages.length;
+        updateSlider();
+    });
 
-  // Function to format time remaining as a string
-  function formatTimeRemaining(timeDifference) {
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-    return `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-  }
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
+        updateSlider();
+    });
 
-  // Update the due date span elements for each event
-  const dueDateElementWorkshop = document.getElementById("event-due-date-workshop");
-  if (dueDateElementWorkshop) {
-    dueDateElementWorkshop.textContent = formatTimeRemaining(timeDifferenceWorkshop);
-  }
+    function showSlide(index) {
+        if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+            currentIndex = 0;
+        } else {
+            currentIndex = index;
+        }
+        updateSlider();
+    }
 
-  const dueDateElementTeamBuilding = document.getElementById("event-due-date-teambuilding");
-  if (dueDateElementTeamBuilding) {
-    dueDateElementTeamBuilding.textContent = formatTimeRemaining(timeDifferenceTeamBuilding);
-  }
+    setInterval(() => {
+        showSlide(currentIndex + 1);
+    }, 3000);
 
-  const dueDateElementFundraising = document.getElementById("event-due-date-fundraising");
-  if (dueDateElementFundraising) {
-    dueDateElementFundraising.textContent = formatTimeRemaining(timeDifferenceFundraising);
-  }
+    // Events
+
+    // Function to update the countdown for a specific event
+    function updateCountdown(elementId, eventDate) {
+        const eventElement = document.getElementById(elementId);
+        const now = new Date().getTime();
+        const distance = new Date(eventDate).getTime() - now;
+
+        if (distance > 0) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            eventElement.innerText = countdownText;
+        } else {
+            eventElement.innerText = "Event ended";
+        }
+    }
+
+    // Update the countdown for each event
+    setInterval(() => {
+        updateCountdown("event-due-date-workshop", "2023-10-16 10:00:00");
+        updateCountdown("event-due-date-teambuilding", "2023-10-15 12:00:00");
+        updateCountdown("event-due-date-fundraising", "2023-10-17 20:00:00");
+
+        // Add similar lines for other events
+    }, 1000); // Update every second
+
+
+    // Back To Top Button
+
+    // Get the button element
+    var backToTopBtn = document.getElementById("backToTopBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopBtn.style.display = "block";
+        } else {
+            backToTopBtn.style.display = "none";
+        }
+    };
+
+    // When the button is clicked, scroll to the top of the document
+    backToTopBtn.onclick = function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+
+    // Validate Form 
+    const form = document.getElementById("form");
+    const fileInput = document.getElementById("image");
+    const fileDescription = document.getElementById("fileDescription");
+
+    form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        // Get the values of the form fields.
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const surname = document.getElementById("surname").value;
+        const mobile = document.getElementById("mobile").value;
+        const message = document.getElementById("message").value;
+
+
+        // Validate the name field.
+        if (name === "") {
+            // Display an error message.
+            alert("Please enter your name.");
+            // Focus on the name field.
+            document.getElementById("name").focus();
+            return false;
+        }
+
+        // Validate the email field.
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        if (!emailRegex.test(email)) {
+            // Display an error message.
+            alert("Please enter a valid email address.");
+            // Focus on the email field.
+            document.getElementById("email").focus();
+            return false;
+        }
+
+        // Validate the surname field.
+        if (surname === "") {
+            // Display an error message.
+            alert("Please enter your surname.");
+            // Focus on the surname field.
+            document.getElementById("surname").focus();
+            return false;
+        }
+
+        // Validate the mobile field.
+        const mobileRegex = /^\d+$/;
+        if (!mobileRegex.test(mobile)) {
+            // Display an error message.
+            alert("Please enter a valid mobile number.");
+            // Focus on the mobile field.
+            document.getElementById("mobile").focus();
+            return false;
+        }
+
+        // Validate the message field.
+        if (message === "") {
+            // Display an error message.
+            alert("Please enter a message.");
+            // Focus on the message field.
+            document.getElementById("message").focus();
+            return false;
+        }
+
+        // Send simple form to server
+        const formData = {
+            name,
+            email,
+            surname,
+            mobile,
+            message
+        };
+
+         // Append the selected file, if any
+        //  if (fileInput.files.length > 0) {
+        //     formData.append("imageInput", fileInput.files[0]);
+        // }
+
+        try {
+            const response = await fetch("http://localhost:3000/messages", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                if (document.cookie.indexOf('cookieConsent=accepted') !== -1) {
+                    alert("Message sent successfully!");
+                }
+            } else {
+                alert('Something went wrong with retrieving users!');
+            }
+        } catch (error) {
+            closePopupMessage();
+            console.error('Error occurred:', error);
+        }
+         // Event listener to update the file description
+    // fileInput.addEventListener("change", function () {
+    //     if (fileInput.files.length > 0) {
+    //         fileDescription.textContent = "Selected file: " + fileInput.files[0].name;
+    //     } else {
+    //         fileDescription.textContent = "No file selected";
+    //     }
+    // });
+    });
+
+    function displayModal(message) {
+        const modal = document.getElementById("myModal");
+        const modalMessage = document.getElementById("modalMessage");
+
+        modalMessage.textContent = message;
+        modal.style.display = "block";
+
+        // Close the modal when the close button is clicked
+        const closeModalButton = document.getElementById("closeModal");
+        closeModalButton.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+    }
+
+    // Function to show the cookie consent modal
+    function showCookieConsentModal() {
+        const modal = document.querySelector('.cookie-consent-modal');
+        modal.style.display = 'block';
+    }
+
+    // Function to hide the cookie consent modal
+    function hideCookieConsentModal() {
+        const modal = document.querySelector('.cookie-consent-modal');
+        modal.style.display = 'none';
+    }
+
+    // Event listener for cancelling the cookie policy
+    // Event listener for cancelling the cookie policy
+    document.querySelector('.button.cancel').addEventListener('click', function () {
+        // Save the user's choice in local storage
+        localStorage.setItem('cookieConsentAccepted', 'false');
+
+        // Hide the cookie consent popup
+        hideCookieConsentModal();
+    });
+
+    // Function to toggle "Read More" and "Read Less" text when clicked
+    const readMoreLink = document.querySelector('.read-more-link');
+    const expandedContent = document.querySelector('.expanded-content');
+
+    readMoreLink.addEventListener('click', function () {
+        if (expandedContent.style.display === 'none' || expandedContent.style.display === '') {
+            expandedContent.style.display = 'block';
+            readMoreLink.textContent = 'Read Less';
+        } else {
+            expandedContent.style.display = 'none';
+            readMoreLink.textContent = 'Read More';
+        }
+    });
+
+    // Check if the user has already accepted the cookie policy in localStorage
+    window.onload = function () {
+        const cookieConsentAccepted = localStorage.getItem('cookieConsentAccepted');
+
+        if (cookieConsentAccepted !== 'true') {
+            // Show the cookie consent modal with a 2-second delay if not already accepted
+            setTimeout(showCookieConsentModal, 2000);
+        }
+    };
+
+    // Function to set a cookie
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + "; " + expires + "; path=/";
+    }
+
+    // Event listener for accepting the cookie policy
+    document.querySelector('.button.accept').addEventListener('click', function () {
+        // Set a cookie to remember the user's choice for a specified number of days (e.g., 365 days)
+        setCookie('cookieConsent', 'accepted', 365);
+
+        // Hide the cookie consent popup
+        hideCookieConsentModal();
+
+        // Set a flag in localStorage to remember that the user has accepted the cookie policy
+        localStorage.setItem('cookieConsentAccepted', 'true');
+    });
+
+    // Check if the user has already accepted the cookie policy using cookies
+    if (document.cookie.indexOf('cookieConsent=accepted') !== -1) {
+
+        // Cookie policy has been accepted, hide the cookie consent popup
+        hideCookieConsentModal();
+    }
+
+
+    // Sign Up  Form 
+
+    // Get the elements
+    const openSignUpButton = document.getElementById("openSignUp");
+    const closeSignUpButton = document.getElementById("closeSignUp");
+    const signUpOverlay = document.getElementById("signupOverlay");
+
+    // Function to open the sign-up form
+    function openSignUp() {
+        signUpOverlay.style.display = "block";
+    }
+
+    // Function to close the sign-up form
+    function closeSignUp() {
+        signUpOverlay.style.display = "none";
+    }
+
+    // Event listeners
+    openSignUpButton.addEventListener("click", openSignUp);
+    closeSignUpButton.addEventListener("click", closeSignUp);
+
+    // Optional: Close the form when clicking outside of it
+    window.addEventListener("click", (event) => {
+        if (event.target === signUpOverlay) {
+            closeSignUp();
+        }
+    });
+
+    const signupForm = document.getElementById("signupForm");
+
+    signupForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const closeButton = document.getElementById("closeSignUp");
+
+
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("emails").value;
+        const phone = document.getElementById("phone").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        // Validate form inputs
+        if (!username || !email || !phone || !password || !confirmPassword) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return;
+        }
+
+        // Create FormData to send as a POST request
+        const formData = {
+            username,
+            email,
+            phone,
+            password,
+            confirmPassword
+        };
+
+        // Send POST request
+        try {
+            const response = await fetch("http://localhost:3000/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                alert("Sign-up successful!");
+                signupForm.reset();
+            } else {
+                alert("Sign-up failed. Please try again later.");
+            }
+        } catch (error) {
+            closePopupMessage();
+            console.error("An error occurred:", error);
+        }
+
+        closeButton.addEventListener("click", function () {
+            ///Close the sign-up form
+            const signupOverlay = document.getElementById("signupOverlay");
+            signupOverlay.style.display = "none";
+        });
+    });
+
+    // Pop Function 
+
+    // Function to open the popup message with a given text
+    function openPopupMessage(message) {
+        const popupMessage = document.getElementById("popupMessage");
+        const popupMessageText = document.getElementById("popupMessageText");
+
+        // Set the message text
+        popupMessageText.textContent = message;
+
+        // Display the popup message
+        popupMessage.style.display = "block";
+    }
+
+    // Function to close the popup message
+    function closePopupMessage() {
+        const popupMessage = document.getElementById("popupMessage");
+
+        // Hide the popup message
+        popupMessage.style.display = "none";
+    }
+
+    // Event listener for closing the popup message
+    const closePopupButton = document.getElementById("closePopup");
+    closePopupButton.addEventListener("click", closePopupMessage);
+
+
 });

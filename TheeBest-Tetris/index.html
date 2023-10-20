@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tetris</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <a href="popInstruction">
+        <button id="Game">Game</button>
+    </a>
+
+
+
+<div class="popInstructions">
+    <h2>Instruction for Single player</h2>
+    <p>
+        Key 'A : Move the Tetrimino left.<br>
+        Key 'D : Move the Tetrimino right.<br>
+        Key 'Z : Move the Tetrimino down faster (soft drop).<br>
+        Key 'W : Rotate the Tetrimino 90 degrees clockwise.<br>
+    </p>
+
+    <h2>Instruction for Two Player player</h2>
+    <p>
+        <h3>Player 1</h3>
+        Key 'A : Move the Tetrimino left.<br>
+        Key 'D : Move the Tetrimino right.<br>
+        Key 'Z : Move the Tetrimino down faster (soft drop).<br>
+        Key 'W : Rotate the Tetrimino 90 degrees clockwise.<br></p>
+
+        <h3>Player 2</h3>
+        Left Arrow Key: Move the Tetrimino left.<br>
+        Right Arrow Key: Move the Tetrimino right.<br>
+        Down Arrow Key: Move the Tetrimino down faster (soft drop).<br>
+        Up Arrow Key: Rotate the Tetrimino 90 degrees clockwise.,</p>
+    </p>
+    <div>
+        <!-- Link to single-player.html -->
+        <a href="single.html">
+            <button id="singlePlay">1 player</button>
+        </a>
+
+        <!-- Link to double-player.html -->
+        <a href="double.html">
+            <button id="doublePlay">2 players</button>
+        </a>
+    </div>
+</div>
+
+<script>
+    
+</script>
+    
+<script>
+        const singlePlayButton = document.getElementById('singlePlay');
+        const doublePlayButton = document.getElementById('doublePlay');
+        const container1 = document.querySelector('.container1');
+        const container2 = document.querySelector('.container2');
+
+        singlePlayButton.addEventListener('click', () => {
+            container1.style.display = 'flex';
+            container2.style.display = 'none';
+        });
+
+        doublePlayButton.addEventListener('click', () => {
+            container1.style.display = 'none';
+            container2.style.display = 'flex';
+        });
+    </script>
+    <script>
+        const openButton = document.getElementById("Game");
+        const overlay1 = document.querySelector(".overlay1");
+    
+        openButton.addEventListener("click", () => {
+            overlay1.style.display = "flex"; // Display the popup when the button is clicked
+        });
+    
+        function closePopup() {
+            overlay1.style.display = "none"; // Close the popup when the close button is clicked
+        }
+    </script>
+    
+</body>
+</html>

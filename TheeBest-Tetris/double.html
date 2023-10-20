@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style for the win pop-up container */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the pop-up content */
+.popup-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.score{
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Style for the close button */
+#close-popup {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="container2">
+        <div class="player">
+            <!-- <div class="score"></div> -->
+            <canvas class="tetris" width="240" height="400"></canvas>
+            <div class="score"></div>
+        </div>
+        <div>
+            <h2>SCORE 50-POINTS <br> AND WIN</h2>
+        </div>
+        <div class="player">
+            <div class="score"></div>
+            <canvas class="tetris" width="240" height="400"></canvas>
+        </div>
+    
+    </div>
+    <div id="win-popup" class="popup">
+        <div class="popup-content">
+            <h2>You Win!</h2>
+            <p>Congratulations! You have reached a score of 50.</p>
+            <button id="close-popup">Close</button>
+        </div>
+    <script src="arena.js"></script>
+    <script src="player.js"></script>
+    <script src="tetris.js"></script>
+    <script src="main.js"></script>
+    <script>
+        const doublePlayButton = document.getElementById('doublePlay');
+        const container2 = document.querySelector('.container2');
+        
+        doublePlayButton.addEventListener('click', () => {
+            container1.style.display = 'none';
+            container2.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>

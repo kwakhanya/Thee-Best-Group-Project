@@ -42,6 +42,14 @@
       "password": "1234",
       "confirmPassword": "1234",
       "id": 4
+    },
+    {
+      "username": "220296006@mycput.ac.za",
+      "email": "220296006@mycput.ac.za",
+      "phone": "0730493949",
+      "password": "111",
+      "confirmPassword": "111",
+      "id": 5
     }
   ]
 }

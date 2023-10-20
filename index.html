@@ -257,11 +257,46 @@
                 </p>
                 <!-- Tetris Start -->
                 <div id="gameBtn" class="gameBtn">
-                    <a onclick="window.open('TheeBest-Tetris/tetris.html', 'Tetris Game', 'width=800,height=600')">Play
-                        Game</a>
-                </div>
+                    <button id="Game" class="open-popup">Game</button>
+                    </div>
+                    </div>
             </div>
         </div>
+        <!-- Overlay for the popup -->
+<div class="overlay2">
+    <div class="popup2-container">
+    <span class="close-button2" onclick="closePopup2()">&#10006;</span>
+    <div class="popInstructions">
+    <h2>Instruction</h2>
+    <p>
+    <h3>Player 1</h3>
+                    Key 'A : Move the Tetrimino left.<br>
+                    Key 'D : Move the Tetrimino right.<br>
+                    Key 'Z : Move the Tetrimino down faster (soft drop).<br>
+                    Key 'W : Rotate the Tetrimino 90 degrees clockwise.<br>
+    </p>
+     
+                <h3>Player 2</h3>
+    <p>
+                    Left Arrow Key: Move the Tetrimino left.<br>
+                    Right Arrow Key: Move the Tetrimino right.<br>
+                    Down Arrow Key: Move the Tetrimino down faster (soft drop).<br>
+                    Up Arrow Key: Rotate the Tetrimino 90 degrees clockwise.
+    </p>
+    </div>
+    <div class="popup-buttons2">
+    <!-- Link to single-player.html -->
+    <a href="TheeBest-Tetris/single.html">
+    <button id="singlePlay">1 player</button>
+    </a>
+     
+                <!-- Link to double-player.html -->
+    <a href="TheeBest-Tetris/double.html">
+    <button id="doublePlay">2 players</button>
+    </a>
+    </div>
+    </div>
+    </div>
         <div class="events">
             <ul>
                 <li>
@@ -425,7 +460,6 @@
         </div>
 
         <!-- Contact End -->
-
         <div class="modal" id="myModal">
             <div class="modal-content">
                 <span class="close" id="closeModal">&times;</span>
@@ -510,7 +544,20 @@
             </div>
         </div>
         <!-- Footer End -->
-
+<!-- Tertris -->
+<script>
+    const openButton2 = document.getElementById("Game"); // Corrected ID
+    const overlay = document.querySelector(".overlay2"); // Corrected class
+ 
+    openButton2.addEventListener("click", () => {
+        overlay.style.display = "flex";
+    });
+ 
+    function closePopup2() {
+        overlay.style.display = "none"; // Corrected property
+    }
+</script>
+has context menu
         <!-- Chat Button -->
         <script>
             function toggleChatFrame() {
